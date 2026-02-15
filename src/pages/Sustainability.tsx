@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Leaf, Shield, CheckCircle2, Search } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
+import heroSustainability from "@/assets/hero-sustainability.jpg";
 
 const sections = [
   {
@@ -57,7 +58,12 @@ const Sustainability = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-navy">
+      <section className="relative py-32 md:py-44">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroSustainability})` }}
+        />
+        <div className="absolute inset-0 bg-navy/75" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
             <p className="font-thin-label text-[11px] text-gold/60 mb-6">Sustainability & Quality</p>

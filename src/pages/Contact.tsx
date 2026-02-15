@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
 import { useToast } from "@/hooks/use-toast";
+import heroContact from "@/assets/hero-contact.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -22,7 +23,12 @@ const Contact = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-navy">
+      <section className="relative py-32 md:py-44">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroContact})` }}
+        />
+        <div className="absolute inset-0 bg-navy/75" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
             <p className="font-thin-label text-[11px] text-gold/60 mb-6">Contact</p>
@@ -65,12 +71,18 @@ const Contact = () => {
                     ))}
                   </div>
 
-                  {/* Map placeholder */}
-                  <div className="border border-border h-48 bg-light-bg flex items-center justify-center">
-                    <div className="text-center text-muted-foreground">
-                      <MapPin size={24} className="mx-auto mb-2 text-navy/30" />
-                      <p className="text-xs uppercase tracking-wide">Lekki Phase 1, Lagos, Nigeria</p>
-                    </div>
+                  {/* Google Maps Embed */}
+                  <div className="border border-border overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7286!2d3.4737!3d6.4371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53e38b6e3a7%3A0xd6f5cd7e4f0c3c5e!2sChief%20Albert%20Iyorah%20Street%2C%20Lekki%20Phase%201%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000"
+                      width="100%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Kodai Construction Office Location"
+                    />
                   </div>
                 </div>
               </SectionReveal>
@@ -135,7 +147,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="w-full flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold uppercase tracking-wide
-                      bg-gold text-navy hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 transition-all duration-300"
+                      bg-gold text-navy hover:bg-gold-light hover:shadow-[0_0_25px_hsl(var(--gold)/0.4)] transition-all duration-300"
                   >
                     Submit Inquiry <ArrowRight size={14} />
                   </button>

@@ -69,8 +69,8 @@ const Navbar = () => {
             to="/contact"
             className={`ml-2 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wide transition-all duration-300 ${
               scrolled
-                ? "bg-navy text-white hover:bg-navy-light"
-                : "bg-gold text-navy hover:bg-gold-light"
+                ? "bg-navy text-white hover:bg-gold hover:text-navy hover:shadow-[0_0_20px_hsl(var(--gold)/0.3)]"
+                : "bg-gold text-navy hover:bg-gold-light hover:shadow-[0_0_20px_hsl(var(--gold)/0.3)]"
             }`}
           >
             Contact

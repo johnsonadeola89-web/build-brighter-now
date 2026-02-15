@@ -36,9 +36,36 @@ const AnimatedCounter = ({ end, suffix = "", duration = 1800, label, description
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      <div className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white mb-2 tracking-tight">
-        {count}
-        <span className="text-3xl md:text-4xl font-bold">{suffix}</span>
+      {/* Circular ring */}
+      <div className="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-6">
+        <svg className="w-full h-full" viewBox="0 0 120 120">
+          <circle
+            cx="60"
+            cy="60"
+            r="54"
+            fill="none"
+            stroke="hsl(var(--gold) / 0.15)"
+            strokeWidth="2"
+          />
+          <circle
+            cx="60"
+            cy="60"
+            r="54"
+            fill="none"
+            stroke="hsl(var(--gold))"
+            strokeWidth="2.5"
+            strokeDasharray={`${(count / end) * 339.29} 339.29`}
+            strokeLinecap="round"
+            transform="rotate(-90 60 60)"
+            className="transition-all duration-100"
+          />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="text-4xl md:text-5xl font-display font-black text-white tracking-tight">
+            {count}
+          </div>
+          <span className="text-sm md:text-base font-bold text-gold">{suffix}</span>
+        </div>
       </div>
       <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/90 mb-1">{label}</div>
       <div className="text-xs text-white/50 font-body">{description}</div>

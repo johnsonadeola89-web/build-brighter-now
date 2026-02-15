@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MapPin, ArrowRight, ArrowUpRight } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
+import heroPortfolio from "@/assets/hero-portfolio.jpg";
 import zekkoImg from "@/assets/project-zekko.jpg";
 import malibuImg from "@/assets/project-malibu.jpg";
 import tinuolaImg from "@/assets/project-tinuola.jpg";
@@ -100,7 +101,12 @@ const Portfolio = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-navy">
+      <section className="relative py-32 md:py-44">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroPortfolio})` }}
+        />
+        <div className="absolute inset-0 bg-navy/75" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
             <p className="font-thin-label text-[11px] text-gold/60 mb-6">Portfolio</p>
@@ -121,7 +127,7 @@ const Portfolio = () => {
                 onClick={() => setActiveFilter(f)}
                 className={`px-5 py-2 text-xs font-semibold uppercase tracking-wide transition-all duration-300 ${
                   activeFilter === f
-                    ? "bg-navy text-white"
+                    ? "bg-navy text-white shadow-[0_0_15px_hsl(var(--navy)/0.3)]"
                     : "border border-border text-muted-foreground hover:border-navy hover:text-navy"
                 }`}
               >

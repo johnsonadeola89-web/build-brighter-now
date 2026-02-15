@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
+import heroServices from "@/assets/hero-services.jpg";
 
 const services = [
   {
@@ -62,7 +63,12 @@ const Services = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-navy">
+      <section className="relative py-32 md:py-44">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroServices})` }}
+        />
+        <div className="absolute inset-0 bg-navy/75" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -102,7 +108,7 @@ const Services = () => {
                       <Link
                         to="/contact"
                         className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy
-                          hover:gap-3 transition-all duration-300"
+                          hover:text-gold hover:gap-3 transition-all duration-300"
                       >
                         Discuss Your Project <ArrowRight size={12} />
                       </Link>
@@ -128,7 +134,7 @@ const Services = () => {
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold uppercase tracking-wide
-                bg-gold text-navy hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 transition-all duration-300"
+                bg-gold text-navy hover:bg-gold-light hover:shadow-[0_0_25px_hsl(var(--gold)/0.4)] transition-all duration-300"
             >
               Get a Quote <ArrowRight size={14} />
             </Link>
