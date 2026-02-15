@@ -89,6 +89,10 @@
     --dark: 0 0% 7%;
     --light-bg: 0 0% 97%;
     --brand-accent: 45 92% 53%;
+    --navy: 240 65% 27%;
+    --navy-light: 240 50% 35%;
+    --gold: 46 92% 52%;
+    --gold-light: 46 85% 62%;
   }
 
   .dark {
@@ -159,5 +163,13 @@
 
   .text-brand-accent {
     color: hsl(var(--brand-accent));
+  }
+
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
   }
 }

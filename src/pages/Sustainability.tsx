@@ -57,10 +57,10 @@ const Sustainability = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-charcoal">
+      <section className="relative py-32 md:py-44 bg-navy">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
-            <p className="font-thin-label text-[11px] text-white/40 mb-6">Sustainability & Quality</p>
+            <p className="font-thin-label text-[11px] text-gold/60 mb-6">Sustainability & Quality</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
               Building Responsibly,<br />Delivering Excellence
             </h1>
@@ -75,14 +75,14 @@ const Sustainability = () => {
             <SectionReveal key={section.title} delay={i * 80}>
               <div className={`py-12 md:py-16 ${i !== sections.length - 1 ? "border-b border-border" : ""}`}>
                 <div className="flex items-start gap-6 md:gap-10">
-                  <section.icon size={20} className="text-foreground/30 mt-1 shrink-0 hidden md:block" />
+                  <section.icon size={20} className="text-navy/30 mt-1 shrink-0 hidden md:block" />
                   <div className="flex-1">
                     <h2 className="text-2xl md:text-3xl font-display font-black text-foreground mb-4 tracking-tight">{section.title}</h2>
                     <p className="text-foreground/60 leading-relaxed mb-8 max-w-2xl">{section.description}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {section.points.map((point) => (
                         <div key={point} className="flex items-center gap-3 text-sm text-foreground/70">
-                          <div className="w-1 h-1 bg-foreground/40 shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
                           {point}
                         </div>
                       ))}

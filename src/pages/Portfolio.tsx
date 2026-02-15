@@ -100,10 +100,10 @@ const Portfolio = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-charcoal">
+      <section className="relative py-32 md:py-44 bg-navy">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
-            <p className="font-thin-label text-[11px] text-white/40 mb-6">Portfolio</p>
+            <p className="font-thin-label text-[11px] text-gold/60 mb-6">Portfolio</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
               Our Work Speaks<br />for Itself
             </h1>
@@ -121,8 +121,8 @@ const Portfolio = () => {
                 onClick={() => setActiveFilter(f)}
                 className={`px-5 py-2 text-xs font-semibold uppercase tracking-wide transition-all duration-300 ${
                   activeFilter === f
-                    ? "bg-foreground text-background"
-                    : "border border-border text-muted-foreground hover:border-foreground hover:text-foreground"
+                    ? "bg-navy text-white"
+                    : "border border-border text-muted-foreground hover:border-navy hover:text-navy"
                 }`}
               >
                 {f}
@@ -143,18 +143,18 @@ const Portfolio = () => {
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/60 transition-all duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                    <p className="text-white/0 group-hover:text-white/60 text-xs uppercase tracking-widest mb-1 transition-colors duration-400">{project.type}</p>
+                    <p className="text-white/0 group-hover:text-gold/80 text-xs uppercase tracking-widest mb-1 transition-colors duration-400">{project.type}</p>
                     <h3 className="text-white/0 group-hover:text-white text-lg font-display font-bold transition-colors duration-400">{project.name}</h3>
                     <p className="text-white/0 group-hover:text-white/50 text-sm transition-colors duration-400">{project.location}</p>
                   </div>
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <ArrowUpRight size={20} className="text-white" />
+                    <ArrowUpRight size={20} className="text-gold" />
                   </div>
                   <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 text-[10px] font-semibold uppercase tracking-wide ${
-                      project.status === "Completed" ? "bg-white/20 text-white" : "bg-white/10 text-white/70"
+                      project.status === "Completed" ? "bg-gold/80 text-navy" : "bg-white/10 text-white/70"
                     }`}>
                       {project.status}
                     </span>
@@ -177,7 +177,7 @@ const Portfolio = () => {
             <div className="space-y-2">
               {teamProjects.map((p) => (
                 <div key={p} className="flex items-center gap-3 py-3 border-b border-border last:border-0">
-                  <ArrowRight size={12} className="text-muted-foreground shrink-0" />
+                  <ArrowRight size={12} className="text-navy/40 shrink-0" />
                   <span className="text-foreground/80 text-sm">{p}</span>
                 </div>
               ))}
@@ -193,7 +193,7 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-navy/70 backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -208,23 +208,23 @@ const Portfolio = () => {
                 <img src={selectedProject.img} alt={selectedProject.name} className="w-full h-full object-cover" />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-black/50 text-white hover:bg-black/70 transition-colors"
+                  className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-navy/50 text-white hover:bg-navy/70 transition-colors"
                 >
                   <X size={18} />
                 </button>
               </div>
               <div className="p-8">
-                <p className="font-thin-label text-[10px] text-muted-foreground mb-2">{selectedProject.type}</p>
+                <p className="font-thin-label text-[10px] text-gold mb-2">{selectedProject.type}</p>
                 <h2 className="text-2xl font-display font-black text-foreground mb-2 tracking-tight">{selectedProject.name}</h2>
                 <div className="flex items-center gap-1 text-muted-foreground text-sm mb-6">
                   <MapPin size={14} /> {selectedProject.location}
                 </div>
                 <p className="text-foreground/70 leading-relaxed mb-8">{selectedProject.description}</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-foreground mb-4">Key Features</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-navy mb-4">Key Features</p>
                 <div className="grid grid-cols-2 gap-3">
                   {selectedProject.features.map((f) => (
                     <div key={f} className="flex items-center gap-2 text-sm text-foreground/70">
-                      <div className="w-1 h-1 bg-foreground/40" />
+                      <div className="w-1.5 h-1.5 bg-gold rounded-full" />
                       {f}
                     </div>
                   ))}
