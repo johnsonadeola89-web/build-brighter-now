@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import heroImg from "@/assets/hero-construction.jpg";
+import promiseBg from "@/assets/kodai-promise-bg.jpg";
 import zekkoImg from "@/assets/project-zekko.jpg";
 import malibuImg from "@/assets/project-malibu.jpg";
 import tinuolaImg from "@/assets/project-tinuola.jpg";
@@ -64,14 +65,14 @@ const Index = () => {
               <Link
                 to="/portfolio"
                 className="px-8 py-4 text-sm font-semibold uppercase tracking-wide bg-gold text-navy
-                  transition-all duration-400 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
+                  transition-all duration-400 hover:bg-gold-light hover:shadow-[0_0_20px_hsl(var(--gold)/0.4)]"
               >
                 View Projects
               </Link>
               <Link
                 to="/contact"
                 className="px-8 py-4 text-sm font-semibold uppercase tracking-wide border border-white/40 text-white
-                  transition-all duration-400 hover:bg-white hover:text-navy"
+                  transition-all duration-400 hover:bg-white hover:text-navy hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
               >
                 Request Consultation
               </Link>
@@ -101,8 +102,13 @@ const Index = () => {
       </section>
 
       {/* ── Kodai Promise (Animated Counters) ── */}
-      <section className="py-24 md:py-32 bg-navy">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${promiseBg})` }}
+        />
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="container mx-auto px-6 relative z-10">
           <SectionReveal>
             <p className="font-thin-label text-[11px] text-gold/60 text-center mb-6">The Kodai Promise</p>
           </SectionReveal>
@@ -126,13 +132,13 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border">
             {services.map((service, i) => (
               <SectionReveal key={service.title} delay={i * 100}>
-                <div className="group p-8 md:p-10 bg-background hover:bg-secondary transition-all duration-400 h-full">
-                  <p className="font-thin-label text-[10px] text-navy/40 mb-4">0{i + 1}</p>
-                  <h3 className="text-lg md:text-xl font-display font-bold text-foreground mb-3 tracking-tight">{service.title}</h3>
-                  <p className="text-sm text-foreground/60 leading-relaxed mb-6">{service.desc}</p>
+                <div className="group p-8 md:p-10 bg-background hover:bg-navy transition-all duration-400 h-full">
+                  <p className="font-thin-label text-[10px] text-navy/40 group-hover:text-white/40 mb-4 transition-colors duration-400">0{i + 1}</p>
+                  <h3 className="text-lg md:text-xl font-display font-bold text-foreground group-hover:text-gold mb-3 tracking-tight transition-colors duration-400">{service.title}</h3>
+                  <p className="text-sm text-foreground/60 group-hover:text-white/80 leading-relaxed mb-6 transition-colors duration-400">{service.desc}</p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy group-hover:text-white
                       opacity-0 group-hover:opacity-100 transition-all duration-300"
                   >
                     Learn More <ArrowRight size={12} />
@@ -146,7 +152,7 @@ const Index = () => {
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide
-                  border-2 border-navy text-navy hover:bg-navy hover:text-white transition-all duration-300"
+                  border-2 border-navy text-navy hover:bg-gold hover:border-gold hover:text-navy hover:shadow-[0_0_20px_hsl(var(--gold)/0.3)] transition-all duration-300"
               >
                 See Full Services <ArrowRight size={14} />
               </Link>
@@ -192,7 +198,7 @@ const Index = () => {
               <Link
                 to="/portfolio"
                 className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide
-                  bg-navy text-white hover:bg-navy-light transition-all duration-300"
+                  bg-navy text-white hover:bg-gold hover:text-navy hover:shadow-[0_0_20px_hsl(var(--gold)/0.3)] transition-all duration-300"
               >
                 View Full Portfolio <ArrowRight size={14} />
               </Link>
@@ -252,7 +258,7 @@ const Index = () => {
             <Link
               to="/contact"
               className="inline-flex items-center gap-3 px-10 py-4 text-sm font-semibold uppercase tracking-wide
-                bg-gold text-navy hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 transition-all duration-300"
+                bg-gold text-navy hover:bg-gold-light hover:shadow-[0_0_25px_hsl(var(--gold)/0.4)] transition-all duration-300"
             >
               Start Your Project <ArrowRight size={16} />
             </Link>
