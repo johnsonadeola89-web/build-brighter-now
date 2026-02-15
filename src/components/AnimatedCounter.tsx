@@ -9,7 +9,7 @@ interface AnimatedCounterProps {
   description: string;
 }
 
-const AnimatedCounter = ({ end, suffix = "", duration = 2000, label, description }: AnimatedCounterProps) => {
+const AnimatedCounter = ({ end, suffix = "", duration = 1800, label, description }: AnimatedCounterProps) => {
   const { ref, isVisible } = useScrollAnimation(0.3);
   const [count, setCount] = useState(0);
 
@@ -32,15 +32,16 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000, label, description
   return (
     <div
       ref={ref}
-      className={`text-center p-6 rounded-xl border border-gold/20 bg-white/5 backdrop-blur-sm 
-        transition-all duration-700 hover:border-gold/50 hover:shadow-[0_0_30px_hsl(45_92%_53%/0.15)]
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+      className={`text-center transition-all duration-500 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      }`}
     >
-      <div className="text-4xl md:text-5xl font-display font-bold text-gold mb-2">
-        {count}{suffix}
+      <div className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white mb-2 tracking-tight">
+        {count}
+        <span className="text-3xl md:text-4xl font-bold">{suffix}</span>
       </div>
-      <div className="text-sm font-semibold uppercase tracking-widest text-white/90 mb-1">{label}</div>
-      <div className="text-xs text-white/50">{description}</div>
+      <div className="text-sm font-semibold uppercase tracking-[0.2em] text-white/90 mb-1">{label}</div>
+      <div className="text-xs text-white/50 font-body">{description}</div>
     </div>
   );
 };

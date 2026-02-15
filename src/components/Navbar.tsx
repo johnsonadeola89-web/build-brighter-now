@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Services", path: "/services" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "About", path: "/about" },
+  { name: "Sustainability", path: "/sustainability" },
 ];
 
 const Navbar = () => {
@@ -28,52 +29,58 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ delay: 2.2, duration: 0.6 }}
+      transition={{ delay: 2.6, duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy-dark/95 backdrop-blur-md shadow-lg shadow-navy-dark/20"
+          ? "bg-background/95 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={kodaiLogo} alt="Kodai" className="h-10 w-auto" />
+      <div className="container mx-auto flex items-center justify-between px-6 py-5">
+        <Link to="/" className="flex items-center">
+          <img
+            src={kodaiLogo}
+            alt="Kodai"
+            className={`h-8 w-auto transition-all duration-300 ${
+              !scrolled ? "brightness-0 invert" : ""
+            }`}
+          />
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`relative text-sm font-medium tracking-wide transition-colors duration-300 ${
-                location.pathname === link.path
-                  ? "text-gold"
-                  : "text-white/80 hover:text-gold"
-              }`}
+              className={`relative text-[13px] font-medium tracking-wide uppercase transition-colors duration-300 group ${
+                scrolled ? "text-foreground" : "text-white"
+              } ${location.pathname === link.path ? "opacity-100" : "opacity-70 hover:opacity-100"}`}
             >
               {link.name}
-              {location.pathname === link.path && (
-                <motion.div
-                  layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold-gradient rounded-full"
-                />
-              )}
+              <span
+                className={`absolute -bottom-1 left-0 h-px bg-current transition-all duration-300 ${
+                  location.pathname === link.path ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
             </Link>
           ))}
           <Link
             to="/contact"
-            className="ml-4 px-6 py-2.5 text-sm font-semibold rounded-full bg-gold-gradient text-navy-dark 
-              transition-all duration-300 hover:shadow-[0_0_25px_hsl(45_92%_53%/0.5)] hover:scale-105"
+            className={`ml-2 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wide border transition-all duration-300 ${
+              scrolled
+                ? "border-foreground text-foreground hover:bg-foreground hover:text-background"
+                : "border-white text-white hover:bg-white hover:text-black"
+            }`}
           >
-            Contact Us
+            Contact
           </Link>
         </div>
 
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white p-2"
+          className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -86,15 +93,17 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-navy-dark/98 backdrop-blur-md border-t border-white/10"
+            className="md:hidden bg-background border-t border-border"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <div className="container mx-auto px-6 py-8 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-lg font-medium py-2 ${
-                    location.pathname === link.path ? "text-gold" : "text-white/80"
+                  className={`text-lg font-display font-medium ${
+                    location.pathname === link.path
+                      ? "text-foreground"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {link.name}
@@ -102,9 +111,9 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="mt-2 px-6 py-3 text-center font-semibold rounded-full bg-gold-gradient text-navy-dark"
+                className="mt-2 px-6 py-3 text-center font-semibold uppercase tracking-wide border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                Contact Us
+                Contact
               </Link>
             </div>
           </motion.div>

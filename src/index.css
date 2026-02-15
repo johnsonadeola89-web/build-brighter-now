@@ -1,86 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'BW Gradual';
+  src: local('BW Gradual Black');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BW Gradual';
+  src: local('BW Gradual Bold');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BW Gradual';
+  src: local('BW Gradual Medium');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BW Gradual';
+  src: local('BW Gradual Regular');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BW Gradual';
+  src: local('BW Gradual Thin');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 26% 15%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 26% 15%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 26% 15%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 240 68% 27%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 92% 53%;
-    --secondary-foreground: 240 26% 15%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 220 20% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 45 92% 53%;
-    --accent-foreground: 240 26% 15%;
+    --accent: 0 0% 97%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 240 68% 27%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
-    --sidebar-background: 240 26% 15%;
+    --sidebar-background: 0 0% 0%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 45 92% 53%;
-    --sidebar-primary-foreground: 240 26% 15%;
-    --sidebar-accent: 240 30% 20%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 240 20% 25%;
-    --sidebar-ring: 45 92% 53%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 100%;
 
-    --navy: 240 68% 27%;
-    --navy-dark: 240 70% 18%;
-    --navy-light: 240 40% 40%;
-    --gold: 45 92% 53%;
-    --gold-light: 45 95% 70%;
-    --gold-dark: 40 85% 42%;
+    --charcoal: 0 0% 6%;
+    --dark: 0 0% 7%;
+    --light-bg: 0 0% 97%;
+    --brand-accent: 45 92% 53%;
   }
 
   .dark {
-    --background: 240 26% 8%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 95%;
-
-    --card: 240 26% 12%;
+    --card: 0 0% 7%;
     --card-foreground: 0 0% 95%;
-
-    --popover: 240 26% 12%;
+    --popover: 0 0% 7%;
     --popover-foreground: 0 0% 95%;
-
-    --primary: 45 92% 53%;
-    --primary-foreground: 240 26% 15%;
-
-    --secondary: 240 30% 20%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 95%;
-
-    --muted: 240 20% 18%;
-    --muted-foreground: 220 10% 60%;
-
-    --accent: 45 92% 53%;
-    --accent-foreground: 240 26% 15%;
-
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 240 20% 22%;
-    --input: 240 20% 22%;
-    --ring: 45 92% 53%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
   }
 }
 
@@ -90,43 +120,44 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'BW Gradual', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'BW Gradual', 'Inter', 'Helvetica Neue', Arial, sans-serif;
   }
 
   .font-body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   }
 
-  .glow-gold {
-    box-shadow: 0 0 20px hsl(var(--gold) / 0.4), 0 0 40px hsl(var(--gold) / 0.2);
+  .font-thin-label {
+    font-family: 'BW Gradual', 'Inter', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
   }
 
-  .glow-gold-hover:hover {
-    box-shadow: 0 0 25px hsl(var(--gold) / 0.5), 0 0 50px hsl(var(--gold) / 0.3);
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
   }
 
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .bg-dark {
+    background-color: hsl(var(--dark));
   }
 
-  .bg-navy-gradient {
-    background: linear-gradient(135deg, hsl(var(--navy-dark)), hsl(var(--navy)));
+  .bg-light {
+    background-color: hsl(var(--light-bg));
   }
 
-  .bg-gold-gradient {
-    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
+  .text-brand-accent {
+    color: hsl(var(--brand-accent));
   }
 }
