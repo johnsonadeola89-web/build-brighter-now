@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, HardHat, Lightbulb } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import heroImg from "@/assets/hero-construction.jpg";
 import zekkoImg from "@/assets/project-zekko.jpg";
 import malibuImg from "@/assets/project-malibu.jpg";
@@ -11,175 +11,177 @@ import SectionReveal from "@/components/SectionReveal";
 
 const services = [
   {
-    icon: Building2,
-    title: "Design & Engineering",
-    desc: "Integrated architectural, structural, and MEP design solutions from concept to construction documents.",
+    title: "Integrated Design & Engineering",
+    desc: "Architectural, structural, and MEP design from concept through construction documents.",
   },
   {
-    icon: HardHat,
     title: "Construction Delivery",
     desc: "Full-scope general contracting for high-rise, mid-rise, residential, and commercial projects.",
   },
   {
-    icon: Lightbulb,
     title: "Technical Consulting",
     desc: "Feasibility studies, BOQ reviews, construction audits, and engineering-grade coordination.",
+  },
+  {
+    title: "Engineering-Grade Coordination",
+    desc: "MEP integration, smart building systems, and sustainable energy efficiency solutions.",
   },
 ];
 
 const featuredProjects = [
-  { name: "Zekko Hotel", location: "Ikeja GRA", type: "Hospitality", img: zekkoImg },
   { name: "Malibu Hills", location: "Abuja", type: "Luxury Estate", img: malibuImg },
   { name: "Tinuola Tower", location: "Banana Island", type: "14-Floor High-Rise", img: tinuolaImg },
-  { name: "Atrium Homes", location: "Ikoyi", type: "5-Floor Residential", img: atriumImg },
+  { name: "Zekko Hotel", location: "Ikeja GRA", type: "6-Floor Hospitality", img: zekkoImg },
+  { name: "Rice Mill", location: "Epe", type: "Industrial Facility", img: atriumImg },
+  { name: "Owerri Villa", location: "Owerri", type: "Luxury Villa", img: malibuImg },
 ];
 
 const Index = () => {
   return (
     <div className="overflow-hidden">
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      {/* ── Hero ── */}
+      <section className="relative min-h-screen flex items-end pb-24 md:pb-32">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/80 via-navy-dark/60 to-navy-dark/90" />
+        <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.4, duration: 0.8 }}
+            transition={{ delay: 2.6, duration: 0.6 }}
+            className="max-w-3xl"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
-              High-Rise & Mid-Rise
-              <br />
-              <span className="text-gradient">Construction Experts</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[0.95] mb-6 tracking-tight">
+              High-Rise &<br />Mid-Rise<br />Construction Experts
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-body">
-              Committed to a Promise of Excellence — delivering world-class construction across Nigeria
+            <p className="text-base md:text-lg text-white/60 max-w-lg mb-10 font-body leading-relaxed">
+              Committed to a Promise of Excellence — delivering world-class construction across Nigeria.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/portfolio"
-                className="px-8 py-4 rounded-full bg-gold-gradient text-navy-dark font-semibold text-lg
-                  transition-all duration-300 hover:shadow-[0_0_30px_hsl(45_92%_53%/0.5)] hover:scale-105"
+                className="px-8 py-4 text-sm font-semibold uppercase tracking-wide bg-white text-black
+                  transition-all duration-400 hover:bg-white/90"
               >
-                View Our Work
+                View Projects
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold text-lg
-                  transition-all duration-300 hover:border-gold hover:text-gold"
+                className="px-8 py-4 text-sm font-semibold uppercase tracking-wide border border-white/40 text-white
+                  transition-all duration-400 hover:bg-white hover:text-black"
               >
-                Get In Touch
+                Request Consultation
               </Link>
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center pt-2">
-            <div className="w-1.5 h-3 rounded-full bg-gold" />
-          </div>
-        </motion.div>
       </section>
 
-      {/* Kodai Promise */}
-      <section className="bg-navy-gradient py-20">
+      {/* ── Authority Overview ── */}
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-6">
-          <SectionReveal>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-                The Kodai <span className="text-gradient">Promise</span>
+          <div className="max-w-3xl mx-auto">
+            <SectionReveal>
+              <p className="font-thin-label text-[11px] text-muted-foreground mb-6">About Kodai</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-black text-foreground leading-[1.05] mb-8 tracking-tight">
+                Building with technical precision and structured delivery.
               </h2>
-              <p className="text-white/60 max-w-xl mx-auto">
-                Every project comes with our ironclad commitment to quality and accountability
+              <p className="text-foreground/70 text-lg leading-relaxed mb-6">
+                Kodai Construction is a premium construction firm specializing in high-rise and mid-rise building construction across Nigeria. Our integrated approach combines design, engineering, and construction under one roof — ensuring seamless delivery from concept to completion.
               </p>
-            </div>
-          </SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <AnimatedCounter end={3} suffix="-Year" label="Post-Delivery Support" description="Free maintenance & support after handover" />
-            <AnimatedCounter end={10} suffix="-Year" label="Leakage Guarantee" description="Full waterproofing warranty coverage" />
-            <AnimatedCounter end={30} suffix="-Year" label="Structural Guarantee" description="Foundation & structural integrity assurance" />
+              <p className="text-foreground/70 text-lg leading-relaxed">
+                With the Kodai Promise — industry-leading post-construction guarantees — every project comes with our ironclad commitment to quality and accountability.
+              </p>
+            </SectionReveal>
           </div>
         </div>
       </section>
 
-      {/* Services Summary */}
-      <section className="py-24 bg-background">
+      {/* ── Kodai Promise (Animated Counters) ── */}
+      <section className="py-24 md:py-32 bg-charcoal">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                What We <span className="text-gradient">Do</span>
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                End-to-end construction delivery from concept to concrete
-              </p>
-            </div>
+            <p className="font-thin-label text-[11px] text-white/40 text-center mb-6">The Kodai Promise</p>
           </SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-4xl mx-auto mt-8">
+            <AnimatedCounter end={3} suffix=" Years" label="Post-Construction Support" description="Free maintenance & support after handover" />
+            <AnimatedCounter end={10} suffix=" Years" label="Leakage Guarantee" description="Full waterproofing warranty coverage" />
+            <AnimatedCounter end={30} suffix=" Years" label="Structural Guarantee" description="Foundation & structural integrity assurance" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Services Snapshot ── */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-6">
+          <SectionReveal>
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-6">Our Services</p>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-16 tracking-tight">
+              What We Do
+            </h2>
+          </SectionReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border">
             {services.map((service, i) => (
-              <SectionReveal key={service.title} delay={i * 150}>
-                <div className="group p-8 rounded-2xl border border-border bg-card hover:border-gold/50 
-                  transition-all duration-500 hover:shadow-[0_0_40px_hsl(45_92%_53%/0.1)] hover:-translate-y-2">
-                  <div className="w-14 h-14 rounded-xl bg-navy-gradient flex items-center justify-center mb-6
-                    group-hover:shadow-[0_0_20px_hsl(45_92%_53%/0.3)] transition-all duration-500">
-                    <service.icon size={24} className="text-gold" />
-                  </div>
-                  <h3 className="text-xl font-display font-semibold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{service.desc}</p>
+              <SectionReveal key={service.title} delay={i * 100}>
+                <div className="group p-8 md:p-10 bg-background hover:bg-secondary transition-all duration-400 h-full">
+                  <p className="font-thin-label text-[10px] text-muted-foreground mb-4">0{i + 1}</p>
+                  <h3 className="text-lg md:text-xl font-display font-bold text-foreground mb-3 tracking-tight">{service.title}</h3>
+                  <p className="text-sm text-foreground/60 leading-relaxed mb-6">{service.desc}</p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold hover:gap-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground
+                      opacity-0 group-hover:opacity-100 transition-all duration-300"
                   >
-                    Learn More <ArrowRight size={14} />
+                    Learn More <ArrowRight size={12} />
                   </Link>
                 </div>
               </SectionReveal>
             ))}
           </div>
+          <SectionReveal>
+            <div className="text-center mt-12">
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide
+                  border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                See Full Services <ArrowRight size={14} />
+              </Link>
+            </div>
+          </SectionReveal>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-24 bg-muted">
+      {/* ── Featured Projects ── */}
+      <section className="py-24 md:py-32 bg-light-bg">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                Featured <span className="text-gradient">Projects</span>
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                A selection of landmark developments across Nigeria
-              </p>
-            </div>
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-6">Selected Work</p>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-16 tracking-tight">
+              Featured Projects
+            </h2>
           </SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
             {featuredProjects.map((project, i) => (
-              <SectionReveal key={project.name} delay={i * 100}>
-                <Link to="/portfolio" className="group relative block rounded-2xl overflow-hidden aspect-[4/3]">
+              <SectionReveal key={project.name} delay={i * 80}>
+                <Link to="/portfolio" className="group relative block overflow-hidden aspect-[4/3]">
                   <img
                     src={project.img}
                     alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-1">{project.type}</p>
-                    <h3 className="text-xl font-display font-bold text-white mb-1">{project.name}</h3>
-                    <p className="text-white/60 text-sm">{project.location}</p>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
+                    <p className="text-white/0 group-hover:text-white/60 text-xs uppercase tracking-widest mb-1 transition-colors duration-400">{project.type}</p>
+                    <h3 className="text-white/0 group-hover:text-white text-lg font-display font-bold transition-colors duration-400">{project.name}</h3>
+                    <p className="text-white/0 group-hover:text-white/50 text-sm transition-colors duration-400">{project.location}</p>
                   </div>
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
-                      <ArrowRight size={16} className="text-navy-dark" />
-                    </div>
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                    <ArrowUpRight size={20} className="text-white" />
                   </div>
                 </Link>
               </SectionReveal>
@@ -189,39 +191,69 @@ const Index = () => {
             <div className="text-center mt-12">
               <Link
                 to="/portfolio"
-                className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-primary text-primary
-                  font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide
+                  border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                View All Projects <ArrowRight size={16} />
+                View Full Portfolio <ArrowRight size={14} />
               </Link>
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-24 bg-navy-gradient relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(45_92%_53%/0.3),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(45_92%_53%/0.2),transparent_50%)]" />
-        </div>
-        <div className="container mx-auto px-6 text-center relative z-10">
+      {/* ── Instagram Feed ── */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
-              Let's Build Something
-              <br />
-              <span className="text-gradient">That Lasts</span>
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-6">Follow Along</p>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-16 tracking-tight">
+              Inside the Build
             </h2>
-            <p className="text-white/60 max-w-xl mx-auto mb-10">
-              Partner with Kodai Construction for your next landmark project. From vision to reality, we deliver excellence.
-            </p>
+          </SectionReveal>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-w-4xl mx-auto">
+            {[heroImg, zekkoImg, malibuImg, tinuolaImg, atriumImg, heroImg].map((img, i) => (
+              <SectionReveal key={i} delay={i * 60}>
+                <a
+                  href="https://instagram.com/kodaiconstruction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block overflow-hidden aspect-square"
+                >
+                  <img
+                    src={img}
+                    alt={`Kodai Construction site ${i + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-400 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                  </div>
+                </a>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Final CTA ── */}
+      <section className="py-24 md:py-32 bg-charcoal">
+        <div className="container mx-auto px-6 text-center">
+          <SectionReveal>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[1.05] mb-8 tracking-tight">
+              Let's Build Something<br />That Lasts
+            </h2>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gold-gradient text-navy-dark 
-                font-bold text-lg transition-all duration-300 hover:shadow-[0_0_40px_hsl(45_92%_53%/0.5)] hover:scale-105
-                animate-glow-pulse"
+              className="inline-flex items-center gap-3 px-10 py-4 text-sm font-semibold uppercase tracking-wide
+                bg-white text-black hover:bg-white/90 transition-all duration-300"
             >
-              Start Your Project <ArrowRight size={18} />
+              Start Your Project <ArrowRight size={16} />
             </Link>
           </SectionReveal>
         </div>

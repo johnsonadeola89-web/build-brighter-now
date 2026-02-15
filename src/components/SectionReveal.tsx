@@ -13,10 +13,11 @@ const SectionReveal = ({ children, className = "", delay = 0 }: SectionRevealPro
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${className}`}
+      className={`transition-all ease-out ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(40px)",
+        transform: isVisible ? "translateY(0)" : "translateY(15px)",
+        transitionDuration: "0.5s",
         transitionDelay: `${delay}ms`,
       }}
     >

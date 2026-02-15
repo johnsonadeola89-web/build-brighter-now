@@ -22,33 +22,28 @@ const About = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-40 bg-navy-gradient">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(45_92%_53%/0.1),transparent_60%)]" />
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
-            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-4">About Us</p>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6">
-              Building Nigeria's Future,
-              <br />
-              <span className="text-gradient">One Landmark at a Time</span>
+      <section className="relative py-32 md:py-44 bg-charcoal">
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
+            <p className="font-thin-label text-[11px] text-white/40 mb-6">About Us</p>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
+              Our Story. Our Values.<br />Our Promise.
             </h1>
           </motion.div>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="py-24 bg-background">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-6 max-w-3xl">
           <SectionReveal>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8 text-center">
-              Our <span className="text-gradient">Story</span>
-            </h2>
-            <div className="space-y-4 text-foreground/80 leading-relaxed">
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-6">Our Story</p>
+            <div className="space-y-6 text-foreground/70 text-lg leading-relaxed">
               <p>
-                Kodai Construction Limited is a premium construction firm specializing in high-rise and mid-rise building construction across Nigeria. With a portfolio spanning luxury residences, commercial developments, and industrial facilities, we bring international standards to the Nigerian construction landscape.
+                Founded with a vision to revolutionize the construction industry, Kodai Construction has grown from a small team of passionate engineers to a leading construction company in Nigeria. With each project, we have pushed the boundaries of what's possible, setting new standards in quality and innovation.
               </p>
               <p>
-                Founded with a vision to transform Nigeria's skyline, Kodai has grown into a trusted partner for developers, investors, and property owners who demand nothing less than excellence. Our integrated approach — combining design, engineering, and construction under one roof — ensures seamless delivery from concept to completion.
+                Our integrated approach — combining design, engineering, and construction under one roof — ensures seamless delivery from concept to completion. We don't just build structures; we build landmarks that define skylines.
               </p>
             </div>
           </SectionReveal>
@@ -56,28 +51,24 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-muted">
+      <section className="py-16 bg-light-bg">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-4xl mx-auto border border-border">
             <SectionReveal>
-              <div className="p-8 rounded-2xl border border-border bg-card h-full">
-                <div className="w-12 h-12 rounded-xl bg-navy-gradient flex items-center justify-center mb-4">
-                  <Target size={22} className="text-gold" />
-                </div>
-                <h3 className="text-xl font-display font-bold text-foreground mb-3">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  To deliver construction projects of the highest quality, on time and within budget, while maintaining the safest working environments and fostering sustainable building practices.
+              <div className="p-8 md:p-12 bg-background h-full">
+                <Target size={20} className="text-foreground/40 mb-6" />
+                <h3 className="text-xl font-display font-black text-foreground mb-4 tracking-tight">Mission</h3>
+                <p className="text-foreground/60 leading-relaxed">
+                  To deliver exceptional construction solutions that exceed our clients' expectations, utilizing our expertise and commitment to quality, innovation, and sustainability.
                 </p>
               </div>
             </SectionReveal>
-            <SectionReveal delay={150}>
-              <div className="p-8 rounded-2xl border border-border bg-card h-full">
-                <div className="w-12 h-12 rounded-xl bg-navy-gradient flex items-center justify-center mb-4">
-                  <Eye size={22} className="text-gold" />
-                </div>
-                <h3 className="text-xl font-display font-bold text-foreground mb-3">Our Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  To be the most trusted and respected construction company in West Africa, known for iconic buildings, innovative methods, and an unwavering commitment to our clients.
+            <SectionReveal delay={100}>
+              <div className="p-8 md:p-12 bg-background h-full">
+                <Eye size={20} className="text-foreground/40 mb-6" />
+                <h3 className="text-xl font-display font-black text-foreground mb-4 tracking-tight">Vision</h3>
+                <p className="text-foreground/60 leading-relaxed">
+                  We envision a future where Kodai Construction is synonymous with pioneering projects that transform the landscape and inspire communities, driven by our passion for making the impossible possible.
                 </p>
               </div>
             </SectionReveal>
@@ -89,22 +80,18 @@ const About = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-12 text-center">
-              Our Core <span className="text-gradient">Values</span>
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-4">What We Stand For</p>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-16 tracking-tight">
+              Core Values
             </h2>
           </SectionReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border max-w-5xl mx-auto border border-border">
             {values.map((v, i) => (
-              <SectionReveal key={v.title} delay={i * 100}>
-                <div className="group p-6 rounded-2xl border border-border bg-card text-center
-                  hover:border-gold/40 hover:-translate-y-2 transition-all duration-500
-                  hover:shadow-[0_0_30px_hsl(45_92%_53%/0.1)]">
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-navy-gradient flex items-center justify-center mb-4
-                    group-hover:shadow-[0_0_20px_hsl(45_92%_53%/0.3)] transition-all duration-500">
-                    <v.icon size={24} className="text-gold" />
-                  </div>
-                  <h3 className="text-lg font-display font-semibold text-foreground mb-2">{v.title}</h3>
-                  <p className="text-sm text-muted-foreground">{v.desc}</p>
+              <SectionReveal key={v.title} delay={i * 80}>
+                <div className="group p-8 bg-background hover:bg-secondary transition-all duration-400 h-full">
+                  <v.icon size={20} className="text-foreground/40 mb-6 group-hover:text-foreground transition-colors duration-300" />
+                  <h3 className="text-lg font-display font-bold text-foreground mb-2 tracking-tight">{v.title}</h3>
+                  <p className="text-sm text-foreground/60">{v.desc}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -113,17 +100,15 @@ const About = () => {
       </section>
 
       {/* Kodai Promise */}
-      <section className="py-20 bg-navy-gradient">
+      <section className="py-24 bg-charcoal">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-12 text-center">
-              The Kodai <span className="text-gradient">Promise</span>
-            </h2>
+            <p className="font-thin-label text-[11px] text-white/40 text-center mb-6">The Kodai Promise</p>
           </SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <AnimatedCounter end={3} suffix="-Year" label="Post-Delivery Support" description="Free maintenance & support after handover" />
-            <AnimatedCounter end={10} suffix="-Year" label="Leakage Guarantee" description="Full waterproofing warranty coverage" />
-            <AnimatedCounter end={30} suffix="-Year" label="Structural Guarantee" description="Foundation & structural integrity assurance" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-4xl mx-auto mt-8">
+            <AnimatedCounter end={3} suffix=" Years" label="Post-Delivery Support" description="Free maintenance & support after handover" />
+            <AnimatedCounter end={10} suffix=" Years" label="Leakage Guarantee" description="Full waterproofing warranty coverage" />
+            <AnimatedCounter end={30} suffix=" Years" label="Structural Guarantee" description="Foundation & structural integrity assurance" />
           </div>
         </div>
       </section>
@@ -132,27 +117,25 @@ const About = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-12 text-center">
-              Leadership <span className="text-gradient">Team</span>
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-4">Our People</p>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-16 tracking-tight">
+              Leadership Team
             </h2>
           </SectionReveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border max-w-5xl mx-auto border border-border">
             {team.map((member, i) => (
-              <SectionReveal key={member.name} delay={i * 100}>
-                <div className="group relative p-6 rounded-2xl border border-border bg-card overflow-hidden
-                  hover:border-gold/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(45_92%_53%/0.1)]">
-                  <div className="w-20 h-20 mx-auto rounded-full bg-navy-gradient flex items-center justify-center mb-4">
-                    <span className="text-2xl font-display font-bold text-gold">
+              <SectionReveal key={member.name} delay={i * 80}>
+                <div className="group p-8 bg-background hover:bg-secondary transition-all duration-400 h-full">
+                  <div className="w-16 h-16 bg-charcoal flex items-center justify-center mb-6">
+                    <span className="text-lg font-display font-black text-white">
                       {member.name.split(" ").map((n) => n[0]).join("")}
                     </span>
                   </div>
-                  <div className="text-center">
-                    <h3 className="text-lg font-display font-bold text-foreground">{member.name}</h3>
-                    <p className="text-gold text-sm font-medium mb-3">{member.role}</p>
-                    <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      {member.bio}
-                    </p>
-                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground tracking-tight">{member.name}</h3>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">{member.role}</p>
+                  <p className="text-sm text-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                    {member.bio}
+                  </p>
                 </div>
               </SectionReveal>
             ))}
