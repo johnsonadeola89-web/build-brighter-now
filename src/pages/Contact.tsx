@@ -16,16 +16,16 @@ const Contact = () => {
     setForm({ name: "", email: "", phone: "", projectType: "", budgetRange: "", timeline: "", message: "" });
   };
 
-  const inputClass = "w-full px-4 py-3 border border-border bg-background text-foreground text-sm focus:border-foreground focus:ring-0 outline-none transition-all duration-300";
+  const inputClass = "w-full px-4 py-3 border border-border bg-background text-foreground text-sm focus:border-navy focus:ring-0 outline-none transition-all duration-300";
   const labelClass = "block text-xs font-semibold uppercase tracking-wide text-foreground mb-2";
 
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-charcoal">
+      <section className="relative py-32 md:py-44 bg-navy">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
-            <p className="font-thin-label text-[11px] text-white/40 mb-6">Contact</p>
+            <p className="font-thin-label text-[11px] text-gold/60 mb-6">Contact</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
               Let's Build Something<br />That Lasts
             </h1>
@@ -50,13 +50,13 @@ const Contact = () => {
 
                   <div className="space-y-5 pt-4">
                     {[
-                      { icon: MapPin, label: "Office", value: "3A Adeyemi Lawson Street, Ikoyi, Lagos" },
-                      { icon: Phone, label: "Phone", value: "+234 901 202 0202" },
+                      { icon: MapPin, label: "Office", value: "1A Chief Albert Iyorah Street, Lekki Phase 1, Lekki, Lagos" },
+                      { icon: Phone, label: "Phone", value: "+234 912 444 4445" },
                       { icon: Mail, label: "Email", value: "info@kodaiconstruction.com" },
                       { icon: Clock, label: "Hours", value: "Mon–Fri: 8AM–6PM | Sat: 9AM–2PM" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-start gap-4">
-                        <item.icon size={16} className="text-foreground/30 mt-0.5 shrink-0" />
+                        <item.icon size={16} className="text-navy/40 mt-0.5 shrink-0" />
                         <div>
                           <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1">{item.label}</p>
                           <p className="text-sm text-foreground">{item.value}</p>
@@ -68,8 +68,8 @@ const Contact = () => {
                   {/* Map placeholder */}
                   <div className="border border-border h-48 bg-light-bg flex items-center justify-center">
                     <div className="text-center text-muted-foreground">
-                      <MapPin size={24} className="mx-auto mb-2 text-foreground/30" />
-                      <p className="text-xs uppercase tracking-wide">Ikoyi, Lagos, Nigeria</p>
+                      <MapPin size={24} className="mx-auto mb-2 text-navy/30" />
+                      <p className="text-xs uppercase tracking-wide">Lekki Phase 1, Lagos, Nigeria</p>
                     </div>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     className="w-full flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold uppercase tracking-wide
-                      bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
+                      bg-gold text-navy hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 transition-all duration-300"
                   >
                     Submit Inquiry <ArrowRight size={14} />
                   </button>

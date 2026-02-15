@@ -32,7 +32,7 @@ const Navbar = () => {
       transition={{ delay: 2.6, duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border"
+          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -59,18 +59,18 @@ const Navbar = () => {
             >
               {link.name}
               <span
-                className={`absolute -bottom-1 left-0 h-px bg-current transition-all duration-300 ${
-                  location.pathname === link.path ? "w-full" : "w-0 group-hover:w-full"
-                }`}
+                className={`absolute -bottom-1 left-0 h-px transition-all duration-300 ${
+                  scrolled ? "bg-navy" : "bg-gold"
+                } ${location.pathname === link.path ? "w-full" : "w-0 group-hover:w-full"}`}
               />
             </Link>
           ))}
           <Link
             to="/contact"
-            className={`ml-2 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wide border transition-all duration-300 ${
+            className={`ml-2 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wide transition-all duration-300 ${
               scrolled
-                ? "border-foreground text-foreground hover:bg-foreground hover:text-background"
-                : "border-white text-white hover:bg-white hover:text-black"
+                ? "bg-navy text-white hover:bg-navy-light"
+                : "bg-gold text-navy hover:bg-gold-light"
             }`}
           >
             Contact
@@ -93,7 +93,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-t border-border"
+            className="md:hidden bg-white border-t border-border"
           >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-5">
               {navLinks.map((link) => (
@@ -102,7 +102,7 @@ const Navbar = () => {
                   to={link.path}
                   className={`text-lg font-display font-medium ${
                     location.pathname === link.path
-                      ? "text-foreground"
+                      ? "text-navy"
                       : "text-muted-foreground"
                   }`}
                 >
@@ -111,7 +111,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="mt-2 px-6 py-3 text-center font-semibold uppercase tracking-wide border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                className="mt-2 px-6 py-3 text-center font-semibold uppercase tracking-wide bg-navy text-white hover:bg-navy-light transition-all duration-300"
               >
                 Contact
               </Link>

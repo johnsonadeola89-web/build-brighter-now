@@ -4,7 +4,7 @@ import kodaiLogo from "@/assets/kodai-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-charcoal text-white/70">
+    <footer className="bg-navy text-white/70">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -12,7 +12,7 @@ const Footer = () => {
             <img src={kodaiLogo} alt="Kodai" className="h-10 w-auto brightness-0 invert" />
             <p className="text-sm leading-relaxed text-white/40">
               High-Rise & Mid-Rise Construction Experts.
-              <br />Committed to a Promise of Excellence.
+              <br />Making the Impossible Possible.
             </p>
           </div>
 
@@ -31,7 +31,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-sm hover:text-white transition-colors duration-300"
+                  className="text-sm hover:text-gold transition-colors duration-300"
                 >
                   {link.name}
                 </Link>
@@ -44,15 +44,15 @@ const Footer = () => {
             <h4 className="text-white font-display text-sm font-bold uppercase tracking-[0.15em]">Contact</h4>
             <div className="flex flex-col gap-3 text-sm">
               <div className="flex items-start gap-3">
-                <MapPin size={14} className="text-white/40 mt-0.5 shrink-0" />
-                <span>3A Adeyemi Lawson Street, Ikoyi, Lagos</span>
+                <MapPin size={14} className="text-gold/60 mt-0.5 shrink-0" />
+                <span>1A Chief Albert Iyorah Street, Lekki Phase 1, Lekki, Lagos</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone size={14} className="text-white/40 shrink-0" />
-                <span>+234 901 202 0202</span>
+                <Phone size={14} className="text-gold/60 shrink-0" />
+                <span>+234 912 444 4445</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={14} className="text-white/40 shrink-0" />
+                <Mail size={14} className="text-gold/60 shrink-0" />
                 <span>info@kodaiconstruction.com</span>
               </div>
             </div>
@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/30">
           <p>© {new Date().getFullYear()} Kodai Construction. All rights reserved.</p>
-          <p className="font-thin-label text-[10px]">Committed to a Promise of Excellence</p>
+          <p className="font-thin-label text-[10px] text-gold/40">Making the Impossible Possible</p>
         </div>
       </div>
     </footer>

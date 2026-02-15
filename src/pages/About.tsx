@@ -22,10 +22,10 @@ const About = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-charcoal">
+      <section className="relative py-32 md:py-44 bg-navy">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
-            <p className="font-thin-label text-[11px] text-white/40 mb-6">About Us</p>
+            <p className="font-thin-label text-[11px] text-gold/60 mb-6">About Us</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
               Our Story. Our Values.<br />Our Promise.
             </h1>
@@ -56,7 +56,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-4xl mx-auto border border-border">
             <SectionReveal>
               <div className="p-8 md:p-12 bg-background h-full">
-                <Target size={20} className="text-foreground/40 mb-6" />
+                <Target size={20} className="text-navy/40 mb-6" />
                 <h3 className="text-xl font-display font-black text-foreground mb-4 tracking-tight">Mission</h3>
                 <p className="text-foreground/60 leading-relaxed">
                   To deliver exceptional construction solutions that exceed our clients' expectations, utilizing our expertise and commitment to quality, innovation, and sustainability.
@@ -65,7 +65,7 @@ const About = () => {
             </SectionReveal>
             <SectionReveal delay={100}>
               <div className="p-8 md:p-12 bg-background h-full">
-                <Eye size={20} className="text-foreground/40 mb-6" />
+                <Eye size={20} className="text-gold/60 mb-6" />
                 <h3 className="text-xl font-display font-black text-foreground mb-4 tracking-tight">Vision</h3>
                 <p className="text-foreground/60 leading-relaxed">
                   We envision a future where Kodai Construction is synonymous with pioneering projects that transform the landscape and inspire communities, driven by our passion for making the impossible possible.
@@ -89,7 +89,7 @@ const About = () => {
             {values.map((v, i) => (
               <SectionReveal key={v.title} delay={i * 80}>
                 <div className="group p-8 bg-background hover:bg-secondary transition-all duration-400 h-full">
-                  <v.icon size={20} className="text-foreground/40 mb-6 group-hover:text-foreground transition-colors duration-300" />
+                  <v.icon size={20} className="text-navy/40 mb-6 group-hover:text-navy transition-colors duration-300" />
                   <h3 className="text-lg font-display font-bold text-foreground mb-2 tracking-tight">{v.title}</h3>
                   <p className="text-sm text-foreground/60">{v.desc}</p>
                 </div>
@@ -100,10 +100,10 @@ const About = () => {
       </section>
 
       {/* Kodai Promise */}
-      <section className="py-24 bg-charcoal">
+      <section className="py-24 bg-navy">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <p className="font-thin-label text-[11px] text-white/40 text-center mb-6">The Kodai Promise</p>
+            <p className="font-thin-label text-[11px] text-gold/60 text-center mb-6">The Kodai Promise</p>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-4xl mx-auto mt-8">
             <AnimatedCounter end={3} suffix=" Years" label="Post-Delivery Support" description="Free maintenance & support after handover" />
@@ -126,13 +126,13 @@ const About = () => {
             {team.map((member, i) => (
               <SectionReveal key={member.name} delay={i * 80}>
                 <div className="group p-8 bg-background hover:bg-secondary transition-all duration-400 h-full">
-                  <div className="w-16 h-16 bg-charcoal flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-navy flex items-center justify-center mb-6">
                     <span className="text-lg font-display font-black text-white">
                       {member.name.split(" ").map((n) => n[0]).join("")}
                     </span>
                   </div>
                   <h3 className="text-lg font-display font-bold text-foreground tracking-tight">{member.name}</h3>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">{member.role}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-navy/60 mb-3">{member.role}</p>
                   <p className="text-sm text-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
                     {member.bio}
                   </p>

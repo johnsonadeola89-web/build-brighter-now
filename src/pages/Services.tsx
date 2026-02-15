@@ -62,7 +62,7 @@ const Services = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative py-32 md:py-44 bg-charcoal">
+      <section className="relative py-32 md:py-44 bg-navy">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ const Services = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="max-w-3xl"
           >
-            <p className="font-thin-label text-[11px] text-white/40 mb-6">Our Services</p>
+            <p className="font-thin-label text-[11px] text-gold/60 mb-6">Our Services</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
               Complete Construction Delivery, From Concept to Concrete
             </h1>
@@ -86,7 +86,7 @@ const Services = () => {
               <SectionReveal key={service.title} delay={i * 80}>
                 <div className={`py-12 md:py-16 ${i !== services.length - 1 ? "border-b border-border" : ""}`}>
                   <div className="flex items-start gap-6 md:gap-10">
-                    <span className="font-thin-label text-[11px] text-muted-foreground pt-2 hidden md:block">{service.num}</span>
+                    <span className="font-thin-label text-[11px] text-navy/30 pt-2 hidden md:block">{service.num}</span>
                     <div className="flex-1">
                       <p className="font-thin-label text-[10px] text-muted-foreground mb-3">{service.subtitle}</p>
                       <h2 className="text-2xl md:text-3xl font-display font-black text-foreground mb-4 tracking-tight">{service.title}</h2>
@@ -94,14 +94,14 @@ const Services = () => {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                         {service.features.map((feature) => (
                           <div key={feature} className="flex items-center gap-3 text-sm text-foreground/80">
-                            <CheckCircle2 size={14} className="text-foreground/40 shrink-0" />
+                            <CheckCircle2 size={14} className="text-gold shrink-0" />
                             {feature}
                           </div>
                         ))}
                       </div>
                       <Link
                         to="/contact"
-                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground
+                        className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy
                           hover:gap-3 transition-all duration-300"
                       >
                         Discuss Your Project <ArrowRight size={12} />
@@ -116,7 +116,7 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-charcoal">
+      <section className="py-24 bg-navy">
         <div className="container mx-auto px-6 text-center">
           <SectionReveal>
             <h2 className="text-3xl md:text-4xl font-display font-black text-white mb-6 tracking-tight">
@@ -128,7 +128,7 @@ const Services = () => {
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 px-10 py-4 text-sm font-semibold uppercase tracking-wide
-                bg-white text-black hover:bg-white/90 transition-all duration-300"
+                bg-gold text-navy hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 transition-all duration-300"
             >
               Get a Quote <ArrowRight size={14} />
             </Link>

@@ -45,7 +45,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImg})` }}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-navy/70" />
 
         <div className="relative z-10 container mx-auto px-6">
           <motion.div
@@ -58,20 +58,20 @@ const Index = () => {
               High-Rise &<br />Mid-Rise<br />Construction Experts
             </h1>
             <p className="text-base md:text-lg text-white/60 max-w-lg mb-10 font-body leading-relaxed">
-              Committed to a Promise of Excellence — delivering world-class construction across Nigeria.
+              Making the Impossible Possible — delivering world-class construction across Nigeria.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/portfolio"
-                className="px-8 py-4 text-sm font-semibold uppercase tracking-wide bg-white text-black
-                  transition-all duration-400 hover:bg-white/90"
+                className="px-8 py-4 text-sm font-semibold uppercase tracking-wide bg-gold text-navy
+                  transition-all duration-400 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
               >
                 View Projects
               </Link>
               <Link
                 to="/contact"
                 className="px-8 py-4 text-sm font-semibold uppercase tracking-wide border border-white/40 text-white
-                  transition-all duration-400 hover:bg-white hover:text-black"
+                  transition-all duration-400 hover:bg-white hover:text-navy"
               >
                 Request Consultation
               </Link>
@@ -101,10 +101,10 @@ const Index = () => {
       </section>
 
       {/* ── Kodai Promise (Animated Counters) ── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-24 md:py-32 bg-navy">
         <div className="container mx-auto px-6">
           <SectionReveal>
-            <p className="font-thin-label text-[11px] text-white/40 text-center mb-6">The Kodai Promise</p>
+            <p className="font-thin-label text-[11px] text-gold/60 text-center mb-6">The Kodai Promise</p>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-4xl mx-auto mt-8">
             <AnimatedCounter end={3} suffix=" Years" label="Post-Construction Support" description="Free maintenance & support after handover" />
@@ -127,12 +127,12 @@ const Index = () => {
             {services.map((service, i) => (
               <SectionReveal key={service.title} delay={i * 100}>
                 <div className="group p-8 md:p-10 bg-background hover:bg-secondary transition-all duration-400 h-full">
-                  <p className="font-thin-label text-[10px] text-muted-foreground mb-4">0{i + 1}</p>
+                  <p className="font-thin-label text-[10px] text-navy/40 mb-4">0{i + 1}</p>
                   <h3 className="text-lg md:text-xl font-display font-bold text-foreground mb-3 tracking-tight">{service.title}</h3>
                   <p className="text-sm text-foreground/60 leading-relaxed mb-6">{service.desc}</p>
                   <Link
                     to="/services"
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-foreground
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy
                       opacity-0 group-hover:opacity-100 transition-all duration-300"
                   >
                     Learn More <ArrowRight size={12} />
@@ -146,7 +146,7 @@ const Index = () => {
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide
-                  border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                  border-2 border-navy text-navy hover:bg-navy hover:text-white transition-all duration-300"
               >
                 See Full Services <ArrowRight size={14} />
               </Link>
@@ -174,14 +174,14 @@ const Index = () => {
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/60 transition-all duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                    <p className="text-white/0 group-hover:text-white/60 text-xs uppercase tracking-widest mb-1 transition-colors duration-400">{project.type}</p>
+                    <p className="text-white/0 group-hover:text-gold/80 text-xs uppercase tracking-widest mb-1 transition-colors duration-400">{project.type}</p>
                     <h3 className="text-white/0 group-hover:text-white text-lg font-display font-bold transition-colors duration-400">{project.name}</h3>
                     <p className="text-white/0 group-hover:text-white/50 text-sm transition-colors duration-400">{project.location}</p>
                   </div>
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                    <ArrowUpRight size={20} className="text-white" />
+                    <ArrowUpRight size={20} className="text-gold" />
                   </div>
                 </Link>
               </SectionReveal>
@@ -192,7 +192,7 @@ const Index = () => {
               <Link
                 to="/portfolio"
                 className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide
-                  border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                  bg-navy text-white hover:bg-navy-light transition-all duration-300"
               >
                 View Full Portfolio <ArrowRight size={14} />
               </Link>
@@ -225,7 +225,7 @@ const Index = () => {
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-400 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/50 transition-all duration-400 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       fill="currentColor"
@@ -242,16 +242,17 @@ const Index = () => {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-24 md:py-32 bg-charcoal">
+      <section className="py-24 md:py-32 bg-navy">
         <div className="container mx-auto px-6 text-center">
           <SectionReveal>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[1.05] mb-8 tracking-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[1.05] mb-4 tracking-tight">
               Let's Build Something<br />That Lasts
             </h2>
+            <p className="text-gold/60 text-sm font-thin-label tracking-[0.15em] mb-10">Making the Impossible Possible</p>
             <Link
               to="/contact"
               className="inline-flex items-center gap-3 px-10 py-4 text-sm font-semibold uppercase tracking-wide
-                bg-white text-black hover:bg-white/90 transition-all duration-300"
+                bg-gold text-navy hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 transition-all duration-300"
             >
               Start Your Project <ArrowRight size={16} />
             </Link>

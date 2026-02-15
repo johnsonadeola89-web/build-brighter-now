@@ -10,18 +10,17 @@ const SplashScreen = ({ isVisible }: SplashScreenProps) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center"
-          style={{ backgroundColor: "#0f0f0f" }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {/* Engineering grid background */}
+          {/* Subtle grid background */}
           <motion.div
             className="absolute inset-0 animate-grid-fade"
             style={{
               backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+                linear-gradient(rgba(26,26,110,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26,26,110,0.04) 1px, transparent 1px)
               `,
               backgroundSize: "60px 60px",
             }}
@@ -42,11 +41,19 @@ const SplashScreen = ({ isVisible }: SplashScreenProps) => {
               transition={{ duration: 0.8, delay: 0.2 }}
             />
             <motion.div
-              className="h-px bg-white/30"
+              className="h-px bg-navy/30"
               initial={{ width: 0 }}
               animate={{ width: 80 }}
               transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
             />
+            <motion.p
+              className="text-[10px] font-thin-label text-navy/40 tracking-[0.2em]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+            >
+              Making the Impossible Possible
+            </motion.p>
           </motion.div>
         </motion.div>
       )}

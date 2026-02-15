@@ -65,6 +65,14 @@ export default {
         dark: "hsl(var(--dark))",
         "light-bg": "hsl(var(--light-bg))",
         "brand-accent": "hsl(var(--brand-accent))",
+        navy: {
+          DEFAULT: "hsl(var(--navy))",
+          light: "hsl(var(--navy-light))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
