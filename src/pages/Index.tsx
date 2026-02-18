@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/hero-construction.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 import promiseBg from "@/assets/kodai-promise-bg.jpg";
 import zekkoImg from "@/assets/project-zekko.jpg";
 import malibuImg from "@/assets/project-malibu.jpg";
@@ -42,11 +42,15 @@ const Index = () => {
     <div className="overflow-hidden">
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-end pb-24 md:pb-32">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImg})` }}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src={heroVideo}
         />
-        <div className="absolute inset-0 bg-navy/70" />
+        <div className="absolute inset-0 bg-navy/60" />
 
         <div className="relative z-10 container mx-auto px-6">
           <motion.div
@@ -217,7 +221,7 @@ const Index = () => {
             </h2>
           </SectionReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-w-4xl mx-auto">
-            {[heroImg, zekkoImg, malibuImg, tinuolaImg, atriumImg, heroImg].map((img, i) => (
+            {[zekkoImg, zekkoImg, malibuImg, tinuolaImg, atriumImg, malibuImg].map((img, i) => (
               <SectionReveal key={i} delay={i * 60}>
                 <a
                   href="https://instagram.com/kodaiconstruction"
