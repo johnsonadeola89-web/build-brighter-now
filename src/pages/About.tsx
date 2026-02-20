@@ -182,7 +182,7 @@ const About = () => {
                   {/* Photo placeholder */}
                   <div className="aspect-[3/4] bg-light-bg flex items-center justify-center overflow-hidden">
                     {member.photo ? (
-                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover object-top" />
                     ) : (
                       <div className="w-full h-full bg-gradient-to-b from-secondary to-light-bg flex items-center justify-center">
                         <span className="text-5xl md:text-6xl font-display font-black text-navy/15 group-hover:text-navy/25 transition-colors duration-400">
