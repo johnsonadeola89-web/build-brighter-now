@@ -7,6 +7,7 @@ import zekkoImg from "@/assets/project-zekko.jpg";
 import malibuImg from "@/assets/project-malibu.jpg";
 import tinuolaImg from "@/assets/project-tinuola.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
+import ricemillImg from "@/assets/project-ricemill.jpg";
 
 interface Project {
   name: string;
@@ -64,7 +65,7 @@ const projects: Project[] = [
   },
   {
     name: "Rice Mill", location: "Epe, Lagos", type: "Industrial Facility",
-    category: ["Industrial"], status: "Completed", img: atriumImg,
+    category: ["Industrial"], status: "Completed", img: ricemillImg,
     description: "A modern industrial rice processing facility in Epe, built to international standards with efficient production line layouts.",
     features: ["Industrial-grade construction", "Production line optimization", "Storage facilities", "Administrative offices"],
   },
