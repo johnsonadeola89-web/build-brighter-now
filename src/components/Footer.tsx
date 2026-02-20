@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import kodaiLogo from "@/assets/kodai-logo.png";
 
 const Footer = () => {
@@ -71,6 +71,15 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/30">
           <p>© {new Date().getFullYear()} Kodai Construction. All rights reserved.</p>
+          <a
+            href="https://www.instagram.com/kodaiconstruction/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/40 hover:text-gold transition-colors duration-300"
+            aria-label="Follow Kodai Construction on Instagram"
+          >
+            <Instagram size={18} />
+          </a>
           <p className="font-thin-label text-[10px] text-gold/40">Making the Impossible Possible</p>
         </div>
       </div>
