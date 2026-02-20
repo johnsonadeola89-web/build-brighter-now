@@ -232,10 +232,14 @@ const About = () => {
                   <X size={20} />
                 </button>
                 <div className="flex items-center gap-6">
-                  <div className="w-20 h-20 bg-white/10 flex items-center justify-center shrink-0">
-                    <span className="text-2xl font-display font-black text-gold">
-                      {selectedMember.initials}
-                    </span>
+                  <div className="w-20 h-20 bg-white/10 flex items-center justify-center shrink-0 overflow-hidden">
+                    {selectedMember.photo ? (
+                      <img src={selectedMember.photo} alt={selectedMember.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-2xl font-display font-black text-gold">
+                        {selectedMember.initials}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <h2 className="text-2xl font-display font-black text-white tracking-tight">{selectedMember.name}</h2>
