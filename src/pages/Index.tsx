@@ -8,6 +8,7 @@ import malibuImg from "@/assets/project-malibu.jpg";
 import tinuolaImg from "@/assets/project-tinuola.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
 import ricemillImg from "@/assets/project-ricemill.jpg";
+import owerriImg from "@/assets/project-overriding-villa.jpg";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import SectionReveal from "@/components/SectionReveal";
 
@@ -35,7 +36,7 @@ const featuredProjects = [
   { name: "Tinuola Tower", location: "Banana Island", type: "14-Floor High-Rise", img: tinuolaImg },
   { name: "Zekko Hotel", location: "Ikeja GRA", type: "6-Floor Hospitality", img: zekkoImg },
   { name: "Rice Mill", location: "Epe", type: "Industrial Facility", img: ricemillImg },
-  { name: "Owerri Villa", location: "Owerri", type: "Luxury Villa", img: malibuImg },
+  { name: "Owerri Villa", location: "Owerri", type: "Luxury Villa", img: owerriImg },
 ];
 
 const Index = () => {
