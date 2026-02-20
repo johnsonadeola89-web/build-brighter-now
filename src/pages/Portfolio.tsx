@@ -8,6 +8,7 @@ import malibuImg from "@/assets/project-malibu.jpg";
 import tinuolaImg from "@/assets/project-tinuola.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
 import ricemillImg from "@/assets/project-ricemill.jpg";
+import owerriImg from "@/assets/project-overriding-villa.jpg";
 
 interface Project {
   name: string;
@@ -59,7 +60,7 @@ const projects: Project[] = [
   },
   {
     name: "Owerri Villa", location: "Owerri", type: "Luxury Villa",
-    category: ["Residential"], status: "Completed", img: malibuImg,
+    category: ["Residential"], status: "Completed", img: owerriImg,
     description: "A stunning luxury villa in Owerri showcasing the finest in residential design with expansive living spaces and lush outdoor areas.",
     features: ["Custom luxury design", "Expansive grounds", "Smart home systems", "Premium finishes"],
   },
