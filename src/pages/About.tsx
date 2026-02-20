@@ -221,39 +221,51 @@ const About = () => {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-background max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"
+              className="bg-background max-w-3xl w-full max-h-[90vh] shadow-2xl flex flex-col"
             >
-              {/* Header */}
-              <div className="relative bg-navy p-8 md:p-10">
-                <button
-                  onClick={() => setSelectedMember(null)}
-                  className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
-                >
-                  <X size={20} />
-                </button>
-                <div className="flex items-center gap-6">
-                  <div className="w-20 h-20 bg-white/10 flex items-center justify-center shrink-0 overflow-hidden">
-                    {selectedMember.photo ? (
-                      <img src={selectedMember.photo} alt={selectedMember.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <span className="text-2xl font-display font-black text-gold">
+              {/* Close button */}
+              <button
+                onClick={() => setSelectedMember(null)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-navy/60 backdrop-blur-sm text-white/70 hover:text-white hover:bg-navy/80 transition-all"
+              >
+                <X size={18} />
+              </button>
+
+              {/* Scrollable content */}
+              <div className="overflow-y-auto flex-1 scrollbar-thin scrollbar-thumb-navy/20 scrollbar-track-transparent hover:scrollbar-thumb-navy/40">
+                {/* Hero photo */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-light-bg">
+                  {selectedMember.photo ? (
+                    <img
+                      src={selectedMember.photo}
+                      alt={selectedMember.name}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-b from-secondary to-light-bg flex items-center justify-center">
+                      <span className="text-7xl font-display font-black text-navy/15">
                         {selectedMember.initials}
                       </span>
-                    )}
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-display font-black text-white tracking-tight">{selectedMember.name}</h2>
-                    <p className="text-sm font-semibold uppercase tracking-wide text-gold/80">{selectedMember.role}</p>
+                    </div>
+                  )}
+                  {/* Gradient overlay at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-navy/90 to-transparent" />
+                  {/* Name overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gold/90 mb-2">{selectedMember.role}</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-black text-white tracking-tight leading-tight">{selectedMember.name}</h2>
                   </div>
                 </div>
-              </div>
-              {/* Bio */}
-              <div className="p-8 md:p-10">
-                {selectedMember.bio.split("\n\n").map((paragraph, idx) => (
-                  <p key={idx} className="text-foreground/70 leading-relaxed mb-4 last:mb-0">
-                    {paragraph}
-                  </p>
-                ))}
+
+                {/* Bio */}
+                <div className="p-8 md:p-10">
+                  <div className="w-12 h-[2px] bg-gold/40 mb-8" />
+                  {selectedMember.bio.split("\n\n").map((paragraph, idx) => (
+                    <p key={idx} className="text-foreground/70 leading-relaxed mb-5 last:mb-0 text-[15px]">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </motion.div>
