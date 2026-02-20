@@ -82,7 +82,7 @@ const teamProjects = [
   "Blue Waters — Waterfront development",
 ];
 
-const filters = ["All", "Residential", "Commercial", "Industrial", "High-Rise", "Ongoing", "Completed"];
+const filters = ["All", "Residential", "Commercial", "Industrial", "High-Rise"];
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -98,9 +98,7 @@ const Portfolio = () => {
 
   const filtered = activeFilter === "All"
     ? projects
-    : ["Ongoing", "Completed"].includes(activeFilter)
-      ? projects.filter((p) => p.status === (activeFilter === "Ongoing" ? "In Progress" : activeFilter))
-      : projects.filter((p) => p.category.includes(activeFilter));
+    : projects.filter((p) => p.category.includes(activeFilter));
 
   return (
     <div className="overflow-hidden">
@@ -161,13 +159,6 @@ const Portfolio = () => {
                   </div>
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <ArrowUpRight size={20} className="text-gold" />
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 text-[10px] font-semibold uppercase tracking-wide ${
-                      project.status === "Completed" ? "bg-gold/80 text-navy" : "bg-white/10 text-white/70"
-                    }`}>
-                      {project.status}
-                    </span>
                   </div>
                 </div>
               </SectionReveal>
