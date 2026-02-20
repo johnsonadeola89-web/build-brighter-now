@@ -6,6 +6,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import promiseBg from "@/assets/kodai-promise-bg.jpg";
 import heroAbout from "@/assets/hero-about.jpg";
 import teamElie from "@/assets/team-elie.png";
+import teamMehrez from "@/assets/team-mehrez.jpeg";
 
 const values = [
   { icon: Award, title: "Excellence", desc: "Delivering world-class quality in every detail of our work." },
@@ -19,6 +20,7 @@ const team = [
     name: "Mehrez Boutros",
     role: "Founder & CEO",
     initials: "MB",
+    photo: teamMehrez,
     bio: "Mehrez Boutros is the Founder and CEO of Kodai Construction, setting the standards of modern architecture and structural innovation in Nigeria. Before founding Kodai Construction, he served as Partner and General Manager at Arkland Structures Limited, where he led several landmark projects from conception and design to completion—most notably in Eko Atlantic City, Lagos. Under his leadership, Arkland delivered multiple high-end residential and commercial buildings across Nigeria, including La Paz Apartments in Victoria Island and A & A Towers in Eko Atlantic City.\n\nMehrez holds a Bachelor's degree in Civil Engineering and a Master's degree in Structural Engineering from Notre Dame University, Beirut, Lebanon. With over a decade of professional experience, he has held key leadership roles in renowned infrastructure and structural development projects across the Middle East. Mehrez is a philanthropist and a member of the American Society of Civil Engineers (ASCE). He combines technical expertise with visionary leadership. Through innovation, collaboration, and strategic partnerships, he continues to challenge conventional design approaches, leading Kodai Construction to deliver world-class commercial and residential structures that are transforming the architectural landscape of Nigeria.",
   },
   {
