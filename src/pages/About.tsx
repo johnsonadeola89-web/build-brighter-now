@@ -7,6 +7,8 @@ import promiseBg from "@/assets/kodai-promise-bg.jpg";
 import heroAbout from "@/assets/hero-about.jpg";
 import teamElie from "@/assets/team-elie.png";
 import teamMehrez from "@/assets/team-mehrez.jpeg";
+import teamTunji from "@/assets/team-tunji.png";
+import teamGeoff from "@/assets/team-geoff.jpeg";
 
 const values = [
   { icon: Award, title: "Excellence", desc: "Delivering world-class quality in every detail of our work." },
@@ -34,6 +36,7 @@ const team = [
     name: "Geoff Harum",
     role: "Head of HR",
     initials: "GH",
+    photo: teamGeoff,
     bio: "Geoff Harum is an expert in human capital development, employee creativity, and social innovation, with over 15 years of experience advising C-suite executives and HR leaders across diverse sectors. He currently serves as the Head of Human Resources at Kodai Construction Company Limited, where he leads strategic people management initiatives, fosters innovation, and builds sustainable organizational structures.\n\nBefore joining Kodai Construction, Geoff served as Personal Assistant to a former United Nations Deputy Secretary-General and as Group Human Resources Manager at Arkland Structures Limited, where he played a pivotal role in shaping the company's workforce strategy and culture. Geoff is also the Founder of the World Professional Council, an AI-powered professional and occupational ecosystem that connects experts globally to co-create innovative solutions. He hosts the World Professional Forum, an annual gathering of global thought leaders to initiate dialogue on the future of work.\n\nGeoff has academic advancement in Public Administration, Theology, and a stint in Law, combining these disciplines to bring a holistic and human-centered approach to leadership and organizational development.",
   },
   {
@@ -46,6 +49,7 @@ const team = [
     name: "Tunji Oyeshiku",
     role: "Head of Architecture",
     initials: "TO",
+    photo: teamTunji,
     bio: "Tunji Oyeshiku is the Head of Architecture at Kodai Construction Company, overseeing multiple sectors including residential estates, commercial developments, hospitality spaces, and high-rise buildings.\n\nWith over a decade of professional experience in architecture and construction, Tunji has developed a reputation for delivering designs that balance innovation, functionality, and constructability. His expertise spans conceptual design, project management, and design coordination, ensuring that every project moves seamlessly from vision to execution.\n\nHe oversees multidisciplinary teams, guiding them to achieve design excellence through precision, collaboration, and adherence to global best practices. His leadership philosophy blends creativity with practicality; ensuring that each project not only meets aesthetic and technical standards but also contributes meaningfully to the built environment.\n\nDriven by a passion for modern architecture and sustainable design, Tunji continues to push understanding of context, proportion, and human experience; core principles that have earned him recognition as a trusted professional within Nigeria's architectural and construction industry.",
   },
 ];
