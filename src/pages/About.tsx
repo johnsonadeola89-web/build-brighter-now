@@ -9,6 +9,7 @@ import teamElie from "@/assets/team-elie.png";
 import teamMehrez from "@/assets/team-mehrez.jpeg";
 import teamTunji from "@/assets/team-tunji.png";
 import teamGeoff from "@/assets/team-geoff.jpeg";
+import teamMeshack from "@/assets/team-meshack.png";
 
 const values = [
   { icon: Award, title: "Excellence", desc: "Delivering world-class quality in every detail of our work." },
@@ -43,6 +44,7 @@ const team = [
     name: "Meshack Oberhiri",
     role: "Head of Account & Finance",
     initials: "MO",
+    photo: teamMeshack,
     bio: "Meshack Oberhiri is a distinguished professional with over 15 years of experience working and driving innovative growth in Nigeria. He is a student member of the Institute of Chartered Accountants of Nigeria (ICAN) as well as a Member of the Chartered Institute of Bankers of Nigeria (CIBN).\n\nHis proven commitment to excellence, integrity, and delivering value in dynamic corporate environments is unequalled and unparalleled. He is currently the Head of Account & Finance at Kodai Construction Company Limited.",
   },
   {
