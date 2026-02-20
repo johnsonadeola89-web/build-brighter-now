@@ -59,7 +59,7 @@ const Contact = () => {
                       { icon: MapPin, label: "Office", value: "1A Chief Albert Iyorah Street, Lekki Phase 1, Lekki, Lagos" },
                       { icon: Phone, label: "Phone", value: "+234 912 444 4445" },
                       { icon: Mail, label: "Email", value: "info@kodaiconstruction.com" },
-                      { icon: Clock, label: "Hours", value: "Mon–Fri: 8AM–6PM | Sat: 9AM–2PM" },
+                      { icon: Clock, label: "Hours", value: "Mon–Fri: 8AM–5PM | Sat: 9AM–2PM" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-start gap-4">
                         <item.icon size={16} className="text-navy/40 mt-0.5 shrink-0" />
