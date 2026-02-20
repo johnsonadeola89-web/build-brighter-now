@@ -5,6 +5,7 @@ import SectionReveal from "@/components/SectionReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import promiseBg from "@/assets/kodai-promise-bg.jpg";
 import heroAbout from "@/assets/hero-about.jpg";
+import teamElie from "@/assets/team-elie.png";
 
 const values = [
   { icon: Award, title: "Excellence", desc: "Delivering world-class quality in every detail of our work." },
@@ -24,6 +25,7 @@ const team = [
     name: "Elie Akiki",
     role: "General Manager",
     initials: "EA",
+    photo: teamElie,
     bio: "Elie Akiki is the General Manager of Kodai Construction Company Limited, bringing over a decade of expertise in project and operations management. Before joining Kodai Construction, he served as an award-winning Project Manager and pioneer Operations Manager at Arkland Structures Limited, where he led the delivery of iconic towers that transformed the Lagos skyline.\n\nKnown for his strategic leadership and precision, he excels at simplifying complex operations, optimizing resources, and driving sustainable construction solutions. Elie is a team player and transformational leader, he continues to shape the future of modern construction and design excellence in Nigeria and beyond. Through creativity, discipline, and innovation, Elie Akiki continues to shape the future of construction management and modern architectural excellence in Nigeria and beyond.",
   },
   {
@@ -171,11 +173,15 @@ const About = () => {
                 >
                   {/* Photo placeholder */}
                   <div className="aspect-[3/4] bg-light-bg flex items-center justify-center overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-b from-secondary to-light-bg flex items-center justify-center">
-                      <span className="text-5xl md:text-6xl font-display font-black text-navy/15 group-hover:text-navy/25 transition-colors duration-400">
-                        {member.initials}
-                      </span>
-                    </div>
+                    {member.photo ? (
+                      <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-b from-secondary to-light-bg flex items-center justify-center">
+                        <span className="text-5xl md:text-6xl font-display font-black text-navy/15 group-hover:text-navy/25 transition-colors duration-400">
+                          {member.initials}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <h3 className="text-lg font-display font-bold text-foreground tracking-tight">{member.name}</h3>
