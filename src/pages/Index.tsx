@@ -226,7 +226,7 @@ const Index = () => {
             {[zekkoImg, zekkoImg, malibuImg, tinuolaImg, atriumImg, malibuImg].map((img, i) => (
               <SectionReveal key={i} delay={i * 60}>
                 <a
-                  href="https://instagram.com/kodaiconstruction"
+                  href="https://www.instagram.com/kodaiconstruction/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative block overflow-hidden aspect-square"
