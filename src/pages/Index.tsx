@@ -7,6 +7,8 @@ import zekkoImg from "@/assets/project-zekko.jpg";
 import malibuImg from "@/assets/project-malibu.jpg";
 import tinuolaImg from "@/assets/project-tinuola.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
+import autobiographyImg from "@/assets/project-autobiography.jpg";
+import dahliaImg from "@/assets/project-dahlia.jpg";
 import ricemillImg from "@/assets/project-ricemill.jpg";
 import owerriImg from "@/assets/project-overriding-villa.jpg";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -223,7 +225,7 @@ const Index = () => {
             </h2>
           </SectionReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-w-4xl mx-auto">
-            {[zekkoImg, zekkoImg, malibuImg, tinuolaImg, atriumImg, malibuImg].map((img, i) => (
+            {[zekkoImg, autobiographyImg, malibuImg, tinuolaImg, atriumImg, dahliaImg].map((img, i) => (
               <SectionReveal key={i} delay={i * 60}>
                 <a
                   href="https://www.instagram.com/kodaiconstruction/"
