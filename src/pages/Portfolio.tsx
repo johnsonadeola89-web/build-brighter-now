@@ -9,6 +9,8 @@ import tinuolaImg from "@/assets/project-tinuola.jpg";
 import atriumImg from "@/assets/project-atrium.jpg";
 import ricemillImg from "@/assets/project-ricemill.jpg";
 import owerriImg from "@/assets/project-overriding-villa.jpg";
+import dahliaImg from "@/assets/project-dahlia.jpg";
+import autobiographyImg from "@/assets/project-autobiography.jpg";
 
 interface Project {
   name: string;
@@ -48,13 +50,13 @@ const projects: Project[] = [
   },
   {
     name: "Dahlia Court", location: "Lagos", type: "18-Floor Luxury Residential",
-    category: ["Residential", "High-Rise"], status: "Ongoing", img: tinuolaImg,
+    category: ["Residential", "High-Rise"], status: "Ongoing", img: dahliaImg,
     description: "An 18-floor luxury residential tower setting new standards for high-rise living in Lagos with panoramic city views and world-class amenities.",
     features: ["18 floors", "Panoramic views", "Gym & spa", "Concierge services"],
   },
   {
     name: "Autobiography", location: "Victoria Island, Lagos", type: "18-Floor Luxury",
-    category: ["Residential", "High-Rise"], status: "Ongoing", img: tinuolaImg,
+    category: ["Residential", "High-Rise"], status: "Ongoing", img: autobiographyImg,
     description: "An iconic 18-floor luxury development on Victoria Island, designed to be a landmark of contemporary architecture and refined living.",
     features: ["18 floors", "Iconic design", "Victoria Island waterfront", "Premium amenities"],
   },
