@@ -126,7 +126,7 @@ const Index = () => {
             <p className="font-thin-label text-[11px] text-gold/60 text-center mb-6">The Kodai Promise</p>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 max-w-4xl mx-auto mt-8">
-            <AnimatedCounter end={3} suffix=" Years" label="*Post-Construction Support" description="Free maintenance & support after handover" />
+            <AnimatedCounter end={3} suffix=" Years" label="*Post-Construction Support" description="Full maintenance & support after handover" />
             <AnimatedCounter end={10} suffix=" Years" label="Leakage Guarantee" description="Full waterproofing warranty coverage" />
             <AnimatedCounter end={30} suffix=" Years" label="Structural Guarantee" description="Foundation & structural integrity assurance" />
           </div>
