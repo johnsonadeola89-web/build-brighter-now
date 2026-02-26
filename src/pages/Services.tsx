@@ -57,6 +57,19 @@ const services = [
       "Quality assurance and testing",
     ],
   },
+  {
+    num: "05",
+    title: "Facility Management",
+    subtitle: "Post-Construction Operations & Asset Performance",
+    description: "Our involvement extends beyond construction. We provide structured facility management services that protect asset value, optimize performance, and ensure operational continuity.",
+    features: [
+      "Preventive maintenance programs",
+      "Structural monitoring",
+      "MEP systems management",
+      "Operational performance reviews",
+      "Long-term asset protection strategy",
+    ],
+  },
 ];
 
 const Services = () => {
@@ -110,7 +123,7 @@ const Services = () => {
                         className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy
                           hover:text-gold hover:gap-3 transition-all duration-300"
                       >
-                        Discuss Your Project <ArrowRight size={12} />
+                        {service.title === "Facility Management" ? "Discuss Facility Management" : "Discuss Your Project"} <ArrowRight size={12} />
                       </Link>
                     </div>
                   </div>
