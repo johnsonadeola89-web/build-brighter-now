@@ -83,10 +83,7 @@ const teamProjects = [
   "Blue Waters — Waterfront development",
 ];
 
-const filters = ["All", "Under Construction", "Completed", "Design / Consulting", "Design Only"];
-
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
@@ -96,10 +93,6 @@ const Portfolio = () => {
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
-
-  const filtered = activeFilter === "All"
-    ? projects
-    : projects.filter((p) => p.category.includes(activeFilter));
 
   return (
     <div className="overflow-hidden">
@@ -120,46 +113,42 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Filter & Grid */}
+      {/* Project Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap gap-2 mb-12">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActiveFilter(f)}
-                className={`px-5 py-2 text-xs font-semibold uppercase tracking-wide transition-all duration-300 ${
-                  activeFilter === f
-                    ? "bg-navy text-white shadow-[0_0_15px_hsl(var(--navy)/0.3)]"
-                    : "border border-border text-muted-foreground hover:border-navy hover:text-navy"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-            {filtered.map((project, i) => (
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-5 max-w-6xl mx-auto [column-fill:_balance]">
+            {projects.map((project, i) => (
               <SectionReveal key={project.name} delay={i * 60}>
                 <div
                   onClick={() => setSelectedProject(project)}
-                  className="group cursor-pointer relative overflow-hidden aspect-[4/3]"
+                  className="group cursor-pointer relative overflow-hidden mb-5 break-inside-avoid"
                 >
                   <img
                     src={project.img}
                     alt={project.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/60 transition-all duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                    <p className="text-white/0 group-hover:text-gold/80 text-xs uppercase tracking-widest mb-1 transition-colors duration-400">{project.type}</p>
-                    <h3 className="text-white/0 group-hover:text-white text-lg font-display font-bold transition-colors duration-400">{project.name}</h3>
-                    <p className="text-white/0 group-hover:text-white/50 text-sm transition-colors duration-400">{project.location}</p>
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+
+                  {/* Category tag */}
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider bg-navy/70 text-gold backdrop-blur-sm border border-gold/20">
+                      {project.status}
+                    </span>
                   </div>
+
+                  {/* Expand icon */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <ArrowUpRight size={20} className="text-gold" />
+                  </div>
+
+                  {/* Project info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="text-gold/70 text-[10px] uppercase tracking-[0.2em] mb-1">{project.type}</p>
+                    <h3 className="text-white text-lg font-display font-bold leading-tight">{project.name}</h3>
+                    <p className="text-white/50 text-sm mt-0.5">{project.location}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -206,8 +195,8 @@ const Portfolio = () => {
               onClick={(e) => e.stopPropagation()}
               className="bg-background max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
             >
-              <div className="relative aspect-video">
-                <img src={selectedProject.img} alt={selectedProject.name} className="w-full h-full object-cover" />
+              <div className="relative">
+                <img src={selectedProject.img} alt={selectedProject.name} className="w-full h-auto object-contain" />
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-navy/50 text-white hover:bg-navy/70 transition-colors"
