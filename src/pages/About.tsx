@@ -34,11 +34,11 @@ const team = [
     bio: "Elie Akiki is the General Manager of Kodai Construction Company Limited, bringing over a decade of expertise in project and operations management. Before joining Kodai Construction, he served as an award-winning Project Manager and pioneer Operations Manager at Arkland Structures Limited, where he led the delivery of iconic towers that transformed the Lagos skyline.\n\nKnown for his strategic leadership and precision, he excels at simplifying complex operations, optimizing resources, and driving sustainable construction solutions. Elie is a team player and transformational leader, he continues to shape the future of modern construction and design excellence in Nigeria and beyond. Through creativity, discipline, and innovation, Elie Akiki continues to shape the future of construction management and modern architectural excellence in Nigeria and beyond.",
   },
   {
-    name: "Geoff Harum",
+    name: "Geoffrey Harumi",
     role: "Head of HR",
     initials: "GH",
     photo: teamGeoff,
-    bio: "Geoff Harum is an expert in human capital development, employee creativity, and social innovation, with over 15 years of experience advising C-suite executives and HR leaders across diverse sectors. He currently serves as the Head of Human Resources at Kodai Construction Company Limited, where he leads strategic people management initiatives, fosters innovation, and builds sustainable organizational structures.\n\nBefore joining Kodai Construction, Geoff served as Personal Assistant to a former United Nations Deputy Secretary-General and as Group Human Resources Manager at Arkland Structures Limited, where he played a pivotal role in shaping the company's workforce strategy and culture. Geoff is also the Founder of the World Professional Council, an AI-powered professional and occupational ecosystem that connects experts globally to co-create innovative solutions. He hosts the World Professional Forum, an annual gathering of global thought leaders to initiate dialogue on the future of work.\n\nGeoff has academic advancement in Public Administration, Theology, and a stint in Law, combining these disciplines to bring a holistic and human-centered approach to leadership and organizational development.",
+    bio: "Geoffrey Harumi is an expert in human capital development, employee creativity, and social innovation, with over 15 years of experience advising C-suite executives and HR leaders across diverse sectors. He currently serves as the Head of Human Resources at Kodai Construction Company Limited, where he leads strategic people management initiatives, fosters innovation, and builds sustainable organizational structures.\n\nBefore joining Kodai Construction, Geoffrey served as Personal Assistant to a former United Nations Deputy Secretary-General and as Group Human Resources Manager at Arkland Structures Limited, where he played a pivotal role in shaping the company's workforce strategy and culture. Geoffrey is also the Founder of the World Professional Council, an AI-powered professional and occupational ecosystem that connects experts globally to co-create innovative solutions. He hosts the World Professional Forum, an annual gathering of global thought leaders to initiate dialogue on the future of work.\n\nGeoffrey has academic advancement in Public Administration, Theology, and a stint in Law, combining these disciplines to bring a holistic and human-centered approach to leadership and organizational development.",
   },
   {
     name: "Meshack Oberhiri",
@@ -72,7 +72,7 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.5 }} className="max-w-3xl">
             <p className="font-thin-label text-[11px] text-gold/60 mb-6">About Us</p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-white leading-[0.95] tracking-tight">
-              Our Story. Our Values.<br />Our Promise.
+              Our Story. Our Values.<br />Our Lifecycle Responsibility.
             </h1>
           </motion.div>
         </div>
@@ -89,6 +89,9 @@ const About = () => {
               </p>
               <p>
                 Our integrated approach — combining design, engineering, and construction under one roof — ensures seamless delivery from concept to completion. We don't just build structures; we build landmarks that define skylines.
+              </p>
+              <p>
+                Kodai Construction operates as a full-cycle construction partner — guiding projects from concept development through execution and into long-term operational management.
               </p>
             </div>
           </SectionReveal>

@@ -18,6 +18,7 @@ interface Project {
   type: string;
   category: string[];
   status: string;
+  scope: string;
   img: string;
   description: string;
   features: string[];
@@ -25,50 +26,50 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "Tinuola Tower", location: "Banana Island, Lagos", type: "14-Floor Luxury High-Rise",
-    category: ["Residential", "High-Rise"], status: "In Progress", img: tinuolaImg,
-    description: "A 14-floor luxury residential tower on the prestigious Banana Island, featuring panoramic waterfront views, premium finishes, and world-class amenities.",
-    features: ["14 floors of luxury apartments", "Waterfront location", "Smart home integration", "Rooftop infinity pool"],
-  },
-  {
-    name: "Malibu Hills", location: "Abuja", type: "Luxury Estate",
-    category: ["Residential"], status: "In Progress", img: malibuImg,
-    description: "An exclusive luxury estate in Abuja featuring contemporary villas with modern architecture, landscaped gardens, and premium community amenities.",
-    features: ["Gated luxury community", "Contemporary villa designs", "Landscaped gardens", "Community clubhouse"],
-  },
-  {
-    name: "Zekko Hotel", location: "Ikeja GRA, Lagos", type: "6-Floor Hospitality",
-    category: ["Commercial"], status: "In Progress", img: zekkoImg,
-    description: "A 6-floor boutique hotel in Ikeja GRA combining modern hospitality design with Nigerian cultural elements and premium guest experiences.",
-    features: ["6-floor boutique hotel", "Conference facilities", "Restaurant & lounge", "Premium room suites"],
-  },
-  {
-    name: "Atrium Homes", location: "Ikoyi, Lagos", type: "5-Floor Residential",
-    category: ["Residential"], status: "In Progress", img: atriumImg,
-    description: "A 5-floor luxury residential development in the heart of Ikoyi, featuring spacious apartments with modern finishes and dedicated parking.",
-    features: ["5 floors of luxury units", "Prime Ikoyi location", "Underground parking", "Rooftop terrace"],
-  },
-  {
-    name: "Dahlia Court", location: "Lagos", type: "18-Floor Luxury Residential",
-    category: ["Residential", "High-Rise"], status: "Ongoing", img: dahliaImg,
-    description: "An 18-floor luxury residential tower setting new standards for high-rise living in Lagos with panoramic city views and world-class amenities.",
-    features: ["18 floors", "Panoramic views", "Gym & spa", "Concierge services"],
-  },
-  {
     name: "Autobiography", location: "Victoria Island, Lagos", type: "18-Floor Luxury",
-    category: ["Residential", "High-Rise"], status: "Ongoing", img: autobiographyImg,
+    category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: autobiographyImg,
     description: "An iconic 18-floor luxury development on Victoria Island, designed to be a landmark of contemporary architecture and refined living.",
     features: ["18 floors", "Iconic design", "Victoria Island waterfront", "Premium amenities"],
   },
   {
+    name: "Dahlia Court", location: "Lagos", type: "18-Floor Luxury Residential",
+    category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: dahliaImg,
+    description: "An 18-floor luxury residential tower setting new standards for high-rise living in Lagos with panoramic city views and world-class amenities.",
+    features: ["18 floors", "Panoramic views", "Gym & spa", "Concierge services"],
+  },
+  {
+    name: "Tinuola Tower", location: "Banana Island, Lagos", type: "14-Floor Luxury High-Rise",
+    category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: tinuolaImg,
+    description: "A 14-floor luxury residential tower on the prestigious Banana Island, featuring panoramic waterfront views, premium finishes, and world-class amenities.",
+    features: ["14 floors of luxury apartments", "Waterfront location", "Smart home integration", "Rooftop infinity pool"],
+  },
+  {
+    name: "Atrium Homes", location: "Ikoyi, Lagos", type: "5-Floor Residential",
+    category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: atriumImg,
+    description: "A 5-floor luxury residential development in the heart of Ikoyi, featuring spacious apartments with modern finishes and dedicated parking.",
+    features: ["5 floors of luxury units", "Prime Ikoyi location", "Underground parking", "Rooftop terrace"],
+  },
+  {
+    name: "Zekko Hotel", location: "Ikeja GRA, Lagos", type: "6-Floor Hospitality",
+    category: ["Design / Consulting"], status: "Design / Consulting", scope: "Engineering Advisory", img: zekkoImg,
+    description: "A 6-floor boutique hotel in Ikeja GRA combining modern hospitality design with Nigerian cultural elements and premium guest experiences.",
+    features: ["6-floor boutique hotel", "Conference facilities", "Restaurant & lounge", "Premium room suites"],
+  },
+  {
+    name: "Malibu Hills", location: "Abuja", type: "Luxury Estate",
+    category: ["Design / Consulting"], status: "Design / Consulting", scope: "Engineering Advisory", img: malibuImg,
+    description: "An exclusive luxury estate in Abuja featuring contemporary villas with modern architecture, landscaped gardens, and premium community amenities.",
+    features: ["Gated luxury community", "Contemporary villa designs", "Landscaped gardens", "Community clubhouse"],
+  },
+  {
     name: "Owerri Villa", location: "Owerri", type: "Luxury Villa",
-    category: ["Residential"], status: "Completed", img: owerriImg,
+    category: ["Design Only"], status: "Design Only", scope: "Design Only", img: owerriImg,
     description: "A stunning luxury villa in Owerri showcasing the finest in residential design with expansive living spaces and lush outdoor areas.",
     features: ["Custom luxury design", "Expansive grounds", "Smart home systems", "Premium finishes"],
   },
   {
     name: "Rice Mill", location: "Epe, Lagos", type: "Industrial Facility",
-    category: ["Industrial"], status: "Completed", img: ricemillImg,
+    category: ["Design Only"], status: "Design Only", scope: "Design Only", img: ricemillImg,
     description: "A modern industrial rice processing facility in Epe, built to international standards with efficient production line layouts.",
     features: ["Industrial-grade construction", "Production line optimization", "Storage facilities", "Administrative offices"],
   },
@@ -82,7 +83,7 @@ const teamProjects = [
   "Blue Waters — Waterfront development",
 ];
 
-const filters = ["All", "Residential", "Commercial", "Industrial", "High-Rise"];
+const filters = ["All", "Under Construction", "Completed", "Design / Consulting", "Design Only"];
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -217,8 +218,18 @@ const Portfolio = () => {
               <div className="p-8">
                 <p className="font-thin-label text-[10px] text-gold mb-2">{selectedProject.type}</p>
                 <h2 className="text-2xl font-display font-black text-foreground mb-2 tracking-tight">{selectedProject.name}</h2>
-                <div className="flex items-center gap-1 text-muted-foreground text-sm mb-6">
+                <div className="flex items-center gap-1 text-muted-foreground text-sm mb-4">
                   <MapPin size={14} /> {selectedProject.location}
+                </div>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="font-semibold uppercase tracking-wide text-navy">Status:</span>
+                    <span className="text-foreground/70">{selectedProject.status}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="font-semibold uppercase tracking-wide text-navy">Scope:</span>
+                    <span className="text-foreground/70">{selectedProject.scope}</span>
+                  </div>
                 </div>
                 <p className="text-foreground/70 leading-relaxed mb-8">{selectedProject.description}</p>
                 <p className="text-xs font-semibold uppercase tracking-wide text-navy mb-4">Key Features</p>

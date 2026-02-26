@@ -11,8 +11,8 @@ const Footer = () => {
           <div className="space-y-4">
             <img src={kodaiLogo} alt="Kodai" className="h-10 w-auto brightness-0 invert" />
             <p className="text-sm leading-relaxed text-white/40">
-              High-Rise & Mid-Rise Construction Experts.
-              <br />Making the Impossible Possible.
+              All-Round Construction Experts
+              <br />Design • Engineering • Construction • Consulting • Facility Management
             </p>
           </div>
 

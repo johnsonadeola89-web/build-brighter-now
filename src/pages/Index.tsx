@@ -29,6 +29,10 @@ const services = [
     title: "Engineering-Grade Coordination",
     desc: "MEP integration, smart building systems, and sustainable energy efficiency solutions.",
   },
+  {
+    title: "Facility Management",
+    desc: "Structured post-construction operational oversight, preventive maintenance, and long-term asset performance management.",
+  },
 ];
 
 const featuredProjects = [
@@ -62,10 +66,10 @@ const Index = () => {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-[0.95] mb-6 tracking-tight">
-              High-Rise &<br />Mid-Rise<br />Construction Experts
+              All-Round<br />Construction<br />Experts
             </h1>
             <p className="text-base md:text-lg text-white/60 max-w-lg mb-10 font-body leading-relaxed">
-              Making the Impossible Possible — delivering world-class construction across Nigeria.
+              From design and engineering to construction, consulting, and long-term facility management — we deliver buildings that perform beyond completion.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -98,6 +102,9 @@ const Index = () => {
               </h2>
               <p className="text-foreground/70 text-lg leading-relaxed mb-6">
                 Kodai Construction is a premium construction firm specializing in high-rise and mid-rise building construction across Nigeria. Our integrated approach combines design, engineering, and construction under one roof — ensuring seamless delivery from concept to completion.
+              </p>
+              <p className="text-foreground/70 text-lg leading-relaxed mb-6">
+                Our responsibility does not end at handover. We support, maintain, and manage the environments we build — ensuring structural integrity, operational efficiency, and long-term asset performance.
               </p>
               <p className="text-foreground/70 text-lg leading-relaxed">
                 With the Kodai Promise — industry-leading post-construction guarantees — every project comes with our ironclad commitment to quality and accountability.
@@ -136,7 +143,7 @@ const Index = () => {
             </h2>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border">
-            {services.map((service, i) => (
+            {services.slice(0, 4).map((service, i) => (
               <SectionReveal key={service.title} delay={i * 100}>
                 <div className="group p-8 md:p-10 bg-background hover:bg-navy transition-all duration-400 h-full">
                   <p className="font-thin-label text-[10px] text-navy/40 group-hover:text-white/40 mb-4 transition-colors duration-400">0{i + 1}</p>
@@ -152,6 +159,23 @@ const Index = () => {
                 </div>
               </SectionReveal>
             ))}
+          </div>
+          {/* Fifth service - full width */}
+          <div className="max-w-5xl mx-auto border border-t-0 border-border">
+            <SectionReveal delay={400}>
+              <div className="group p-8 md:p-10 bg-background hover:bg-navy transition-all duration-400">
+                <p className="font-thin-label text-[10px] text-navy/40 group-hover:text-white/40 mb-4 transition-colors duration-400">05</p>
+                <h3 className="text-lg md:text-xl font-display font-bold text-foreground group-hover:text-gold mb-3 tracking-tight transition-colors duration-400">{services[4].title}</h3>
+                <p className="text-sm text-foreground/60 group-hover:text-white/80 leading-relaxed mb-6 transition-colors duration-400">{services[4].desc}</p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-navy group-hover:text-white
+                    opacity-0 group-hover:opacity-100 transition-all duration-300"
+                >
+                  Learn More <ArrowRight size={12} />
+                </Link>
+              </div>
+            </SectionReveal>
           </div>
           <SectionReveal>
             <div className="text-center mt-12">
@@ -213,6 +237,14 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── Legal Note ── */}
+      <section className="py-6 bg-background">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-xs text-foreground/40 max-w-2xl mx-auto leading-relaxed">
+            The 3-Year Post-Construction Support applies to projects where Kodai Construction is retained as the official Facility Manager following project completion.
+          </p>
+        </div>
+      </section>
 
       {/* ── Final CTA ── */}
       <section className="py-24 md:py-32 bg-navy">
