@@ -116,7 +116,7 @@ const Portfolio = () => {
       {/* Project Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 max-w-5xl mx-auto">
             {projects.map((project, i) => (
               <SectionReveal key={project.name} delay={i * 60}>
                 <div
