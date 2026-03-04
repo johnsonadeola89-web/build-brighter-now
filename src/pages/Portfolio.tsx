@@ -26,10 +26,10 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "Autobiography", location: "Victoria Island, Lagos", type: "18-Floor Luxury",
+    name: "Autobiography Residences", location: "Dideolu Estate, Victoria Island, Lagos", type: "G+8 Floors",
     category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: autobiographyImg,
-    description: "An iconic 18-floor luxury development on Victoria Island, designed to be a landmark of contemporary architecture and refined living.",
-    features: ["18 floors", "Iconic design", "Victoria Island waterfront", "Premium amenities"],
+    description: "Three residential towers on Victoria Island featuring 8 floors of luxury apartments, penthouses, and world-class amenities in a secured development.",
+    features: ["Three residential towers", "1, 2 & 3-Bedroom apartments", "Penthouses", "Swimming pool & cabana", "Rooftop luxury spaces"],
   },
   {
     name: "Dahlia Court", location: "Lagos", type: "18-Floor Luxury Residential",
@@ -38,34 +38,34 @@ const projects: Project[] = [
     features: ["18 floors", "Panoramic views", "Gym & spa", "Concierge services"],
   },
   {
-    name: "Tinuola Tower", location: "Banana Island, Lagos", type: "14-Floor Luxury High-Rise",
+    name: "Tinuola Towers", location: "Banana Island, Lagos", type: "15-Floor Luxury High-Rise",
     category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: tinuolaImg,
-    description: "A 14-floor luxury residential tower on the prestigious Banana Island, featuring panoramic waterfront views, premium finishes, and world-class amenities.",
-    features: ["14 floors of luxury apartments", "Waterfront location", "Smart home integration", "Rooftop infinity pool"],
+    description: "A 15-floor luxury residential tower on the prestigious Banana Island, featuring 38 units with a curvilinear wave-form façade, double-height concierge lobby, and resort-style amenities.",
+    features: ["38 luxury residential units", "3 & 4-Bedroom apartments & maisonettes", "Curvilinear façade design", "Swimming pool & fitness center", "Café & residents lounge"],
   },
   {
-    name: "Atrium Homes", location: "Ikoyi, Lagos", type: "5-Floor Residential",
+    name: "Atrium Homes Residences", location: "Adeyemi Lawson, Ikoyi, Lagos", type: "G+5 Floors",
     category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: atriumImg,
-    description: "A 5-floor luxury residential development in the heart of Ikoyi, featuring spacious apartments with modern finishes and dedicated parking.",
-    features: ["5 floors of luxury units", "Prime Ikoyi location", "Underground parking", "Rooftop terrace"],
+    description: "A luxury residential development in the heart of Ikoyi featuring 4-bedroom maisonettes, duplex penthouses, private lifts, and premium finishes.",
+    features: ["4-Bedroom maisonettes & duplex penthouses", "Private lift per residence", "2 BQ per unit", "Structured parking", "Premium interior finishes"],
   },
   {
-    name: "Zekko Hotel", location: "Ikeja GRA, Lagos", type: "6-Floor Hospitality",
+    name: "Zekko Hotel", location: "Oduduwa Way, Ikeja GRA, Lagos", type: "Boutique Hotel",
     category: ["Design / Consulting"], status: "Design / Consulting", scope: "Engineering Advisory", img: zekkoImg,
-    description: "A 6-floor boutique hotel in Ikeja GRA combining modern hospitality design with Nigerian cultural elements and premium guest experiences.",
-    features: ["6-floor boutique hotel", "Conference facilities", "Restaurant & lounge", "Premium room suites"],
+    description: "A boutique hotel in Ikeja GRA featuring diverse suite categories, rooftop dining, spa & wellness facilities, and a multipurpose event hall.",
+    features: ["Standard to executive suites", "Rooftop VIP & outdoor restaurants", "Spa, wellness & gym", "Multipurpose event hall"],
   },
   {
-    name: "Malibu Hills", location: "Abuja", type: "Luxury Estate",
+    name: "Malibu Hills", location: "Asokoro, Abuja", type: "Luxury Estate",
     category: ["Design / Consulting"], status: "Design / Consulting", scope: "Engineering Advisory", img: malibuImg,
-    description: "An exclusive luxury estate in Abuja featuring contemporary villas with modern architecture, landscaped gardens, and premium community amenities.",
-    features: ["Gated luxury community", "Contemporary villa designs", "Landscaped gardens", "Community clubhouse"],
+    description: "A landscape-driven luxury estate in Asokoro, Abuja featuring villas, apartments, and penthouses with resort-style amenities and lifestyle facilities.",
+    features: ["Villas, apartments & penthouses", "Spa, hammam & yoga garden", "Tennis & basketball courts", "Eco play park & event lawn", "Restaurants & lifestyle facilities"],
   },
   {
-    name: "Owerri Villa", location: "Owerri", type: "Luxury Villa",
+    name: "Owerri Villa", location: "Owerri", type: "G+2 Floors",
     category: ["Design Only"], status: "Design Only", scope: "Design Only", img: owerriImg,
-    description: "A stunning luxury villa in Owerri showcasing the finest in residential design with expansive living spaces and lush outdoor areas.",
-    features: ["Custom luxury design", "Expansive grounds", "Smart home systems", "Premium finishes"],
+    description: "A stunning G+2 luxury villa in Owerri showcasing the finest in residential design with expansive living spaces and lush outdoor areas.",
+    features: ["G+2 floors", "Custom luxury design", "Expansive grounds", "Smart home systems", "Premium finishes"],
   },
   {
     name: "Rice Mill", location: "Epe, Lagos", type: "Industrial Facility",
