@@ -45,7 +45,7 @@ const projects: Project[] = [
   },
   {
     name: "Atrium Homes Residences", location: "Adeyemi Lawson, Ikoyi, Lagos", type: "G+5 Floors",
-    category: ["Design / Consulting"], status: "Design / Consulting", scope: "Design & Build", img: atriumImg,
+    category: ["Design Only"], status: "Design Only", scope: "Design Only", img: atriumImg,
     description: "A luxury residential development in the heart of Ikoyi featuring 4-bedroom maisonettes, duplex penthouses, private lifts, and premium finishes.",
     features: ["4-Bedroom maisonettes & duplex penthouses", "Private lift per residence", "2 BQ per unit", "Structured parking", "Premium interior finishes"],
   },
@@ -69,7 +69,7 @@ const projects: Project[] = [
   },
   {
     name: "Rice Mill", location: "Epe, Lagos", type: "Industrial Facility",
-    category: ["Design Only"], status: "Design Only", scope: "Design Only", img: ricemillImg,
+    category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: ricemillImg,
     description: "A modern industrial rice processing facility in Epe, built to international standards with efficient production line layouts.",
     features: ["Industrial-grade construction", "Production line optimization", "Storage facilities", "Administrative offices"],
   },
