@@ -4,8 +4,9 @@ import kodaiLogo from "@/assets/kodai-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-navy text-white/70">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="relative bg-navy text-white/70">
+      <div className="absolute inset-0 bg-gradient-to-b from-navy via-[hsl(240,65%,17%)] to-[hsl(240,65%,8%)]" />
+      <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="space-y-4">
