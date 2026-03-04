@@ -215,10 +215,6 @@ const Portfolio = () => {
                     <span className="font-semibold uppercase tracking-wide text-navy">Status:</span>
                     <span className="text-foreground/70">{selectedProject.status}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="font-semibold uppercase tracking-wide text-navy">Scope:</span>
-                    <span className="text-foreground/70">{selectedProject.scope}</span>
-                  </div>
                 </div>
                 <p className="text-foreground/70 leading-relaxed mb-8">{selectedProject.description}</p>
                 <p className="text-xs font-semibold uppercase tracking-wide text-navy mb-4">Key Features</p>
