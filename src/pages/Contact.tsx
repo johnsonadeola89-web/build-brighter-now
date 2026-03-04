@@ -71,19 +71,6 @@ const Contact = () => {
                     ))}
                   </div>
 
-                  {/* Google Maps Embed */}
-                  <div className="border border-border overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7286!2d3.4737!3d6.4371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53e38b6e3a7%3A0xd6f5cd7e4f0c3c5e!2sChief%20Albert%20Iyorah%20Street%2C%20Lekki%20Phase%201%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000"
-                      width="100%"
-                      height="200"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Kodai Construction Office Location"
-                    />
-                  </div>
                 </div>
               </SectionReveal>
             </div>
@@ -156,6 +143,28 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Full-width Map */}
+      <section className="bg-light-bg">
+        <SectionReveal>
+          <div className="container mx-auto px-6 py-16">
+            <p className="font-thin-label text-[11px] text-muted-foreground mb-4">Find Us</p>
+            <h2 className="text-2xl md:text-3xl font-display font-black text-foreground mb-8 tracking-tight">Our Location</h2>
+          </div>
+          <div className="border-t border-border">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7286!2d3.4737!3d6.4371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53e38b6e3a7%3A0xd6f5cd7e4f0c3c5e!2sChief%20Albert%20Iyorah%20Street%2C%20Lekki%20Phase%201%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Kodai Construction Office Location"
+            />
+          </div>
+        </SectionReveal>
       </section>
     </div>
   );
