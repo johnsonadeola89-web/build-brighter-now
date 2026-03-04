@@ -32,20 +32,20 @@ const projects: Project[] = [
     features: ["Three residential towers", "1, 2 & 3-Bedroom apartments", "Penthouses", "Swimming pool & cabana", "Rooftop luxury spaces"],
   },
   {
-    name: "Dahlia Court", location: "Lagos", type: "18-Floor Luxury Residential",
+    name: "Dahlia Court", location: "Lagos", type: "G+18 Floors",
     category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: dahliaImg,
-    description: "An 18-floor luxury residential tower setting new standards for high-rise living in Lagos with panoramic city views and world-class amenities.",
-    features: ["18 floors", "Panoramic views", "Gym & spa", "Concierge services"],
+    description: "A G+18 floor luxury residential tower setting new standards for high-rise living in Lagos with panoramic city views and world-class amenities.",
+    features: ["G+18 floors", "Panoramic views", "Gym & spa", "Concierge services"],
   },
   {
-    name: "Tinuola Towers", location: "Banana Island, Lagos", type: "15-Floor Luxury High-Rise",
+    name: "Tinuola Towers", location: "Banana Island, Lagos", type: "G+14 Floors",
     category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: tinuolaImg,
-    description: "A 15-floor luxury residential tower on the prestigious Banana Island, featuring 38 units with a curvilinear wave-form façade, double-height concierge lobby, and resort-style amenities.",
+    description: "A G+14 floor luxury residential tower on the prestigious Banana Island, featuring 38 units with a curvilinear wave-form façade, double-height concierge lobby, and resort-style amenities.",
     features: ["38 luxury residential units", "3 & 4-Bedroom apartments & maisonettes", "Curvilinear façade design", "Swimming pool & fitness center", "Café & residents lounge"],
   },
   {
     name: "Atrium Homes Residences", location: "Adeyemi Lawson, Ikoyi, Lagos", type: "G+5 Floors",
-    category: ["Under Construction"], status: "Under Construction", scope: "Design & Build", img: atriumImg,
+    category: ["Design / Consulting"], status: "Design / Consulting", scope: "Design & Build", img: atriumImg,
     description: "A luxury residential development in the heart of Ikoyi featuring 4-bedroom maisonettes, duplex penthouses, private lifts, and premium finishes.",
     features: ["4-Bedroom maisonettes & duplex penthouses", "Private lift per residence", "2 BQ per unit", "Structured parking", "Premium interior finishes"],
   },
@@ -116,12 +116,12 @@ const Portfolio = () => {
       {/* Project Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-5 max-w-6xl mx-auto [column-fill:_balance]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {projects.map((project, i) => (
               <SectionReveal key={project.name} delay={i * 60}>
                 <div
                   onClick={() => setSelectedProject(project)}
-                  className="group cursor-pointer relative overflow-hidden mb-5 break-inside-avoid"
+                  className="group cursor-pointer relative overflow-hidden"
                 >
                   <img
                     src={project.img}
