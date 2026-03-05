@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/30">
           <p>© {new Date().getFullYear()} Kodai Construction. All rights reserved.</p>
           <a
-            href="https://www.instagram.com/kodaiconstruction/"
+            href="https://www.instagram.com/kodaiconstruction?igsh=c2gydGU1eGpwNTQ0"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/40 hover:text-gold transition-colors duration-300"
