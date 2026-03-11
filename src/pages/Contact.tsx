@@ -155,10 +155,11 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="w-full flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold uppercase tracking-wide
-                      bg-gold text-navy hover:bg-gold-light hover:shadow-[0_0_25px_hsl(var(--gold)/0.4)] transition-all duration-300"
+                      bg-gold text-navy hover:bg-gold-light hover:shadow-[0_0_25px_hsl(var(--gold)/0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit Inquiry <ArrowRight size={14} />
+                    {isSubmitting ? <><Loader2 size={14} className="animate-spin" /> Submitting...</> : <>Submit Inquiry <ArrowRight size={14} /></>}
                   </button>
                 </form>
               </SectionReveal>
