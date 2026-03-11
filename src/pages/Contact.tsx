@@ -1,20 +1,42 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, Loader2 } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import heroContact from "@/assets/hero-contact.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "", email: "", phone: "", projectType: "", budgetRange: "", timeline: "", message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Inquiry Submitted", description: "We'll get back to you within 24 hours." });
-    setForm({ name: "", email: "", phone: "", projectType: "", budgetRange: "", timeline: "", message: "" });
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          name: form.name,
+          email: form.email,
+          phone: form.phone || undefined,
+          projectType: form.projectType || undefined,
+          budgetRange: form.budgetRange || undefined,
+          timeline: form.timeline || undefined,
+          message: form.message,
+        },
+      });
+      if (error) throw error;
+      toast({ title: "Inquiry Submitted", description: "We'll get back to you within 24 hours." });
+      setForm({ name: "", email: "", phone: "", projectType: "", budgetRange: "", timeline: "", message: "" });
+    } catch (err) {
+      console.error("Submit error:", err);
+      toast({ title: "Submission Failed", description: "Please try again or contact us directly.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass = "w-full px-4 py-3 border border-border bg-background text-foreground text-sm focus:border-navy focus:ring-0 outline-none transition-all duration-300";
