@@ -88,8 +88,30 @@ Deno.serve(async (req) => {
 </div>
 </body></html>`;
 
+    // Build plain-text version
+    const textParts = [
+      `New Contact Inquiry - Kodai Construction Website`,
+      ``,
+      `Name: ${body.name}`,
+      `Email: ${body.email}`,
+      body.phone ? `Phone: ${body.phone}` : null,
+      body.projectType ? `Project Type: ${body.projectType}` : null,
+      body.budgetRange ? `Budget Range: ${body.budgetRange}` : null,
+      body.timeline ? `Timeline: ${body.timeline}` : null,
+      ``,
+      `Message:`,
+      body.message,
+    ].filter(Boolean).join('\n');
+
     // Enqueue notification email via the email queue
     const messageId = `contact-inquiry-${crypto.randomUUID()}`;
+    const unsubscribeToken = crypto.randomUUID();
+
+    // Create unsubscribe token for the recipient
+    await supabaseAdmin.from("email_unsubscribe_tokens").insert({
+      email: "info@kodaiconstruction.com",
+      token: unsubscribeToken,
+    });
 
     // Log as pending
     await supabaseAdmin.from("email_send_log").insert({
@@ -109,7 +131,14 @@ Deno.serve(async (req) => {
         from: "Kodai Website <noreply@notify.kodaiconstruction.com>",
         subject: `New Inquiry from ${body.name}`,
         html: emailHtml,
+        text: textParts,
         reply_to: body.email,
+        purpose: "transactional",
+        label: "contact-inquiry-notification",
+        sender_domain: "notify.kodaiconstruction.com",
+        queued_at: new Date().toISOString(),
+        idempotency_key: messageId,
+        unsubscribe_token: unsubscribeToken,
       },
     });
 
