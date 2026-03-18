@@ -120,7 +120,6 @@ Deno.serve(async (req) => {
       queue_name: "transactional_emails",
       payload: {
         message_id: messageId,
-        run_id: messageId,
         to: "info@kodaiconstruction.com",
         from: "Kodai Website <noreply@notify.kodaiconstruction.com>",
         subject: `New Inquiry from ${body.name}`,
@@ -131,6 +130,7 @@ Deno.serve(async (req) => {
         label: "contact-inquiry-notification",
         sender_domain: "notify.kodaiconstruction.com",
         queued_at: new Date().toISOString(),
+        idempotency_key: messageId,
       },
     });
 
