@@ -105,6 +105,13 @@ Deno.serve(async (req) => {
 
     // Enqueue notification email via the email queue
     const messageId = `contact-inquiry-${crypto.randomUUID()}`;
+    const unsubscribeToken = crypto.randomUUID();
+
+    // Create unsubscribe token for the recipient
+    await supabaseAdmin.from("email_unsubscribe_tokens").insert({
+      email: "info@kodaiconstruction.com",
+      token: unsubscribeToken,
+    });
 
     // Log as pending
     await supabaseAdmin.from("email_send_log").insert({
@@ -131,6 +138,7 @@ Deno.serve(async (req) => {
         sender_domain: "notify.kodaiconstruction.com",
         queued_at: new Date().toISOString(),
         idempotency_key: messageId,
+        unsubscribe_token: unsubscribeToken,
       },
     });
 
