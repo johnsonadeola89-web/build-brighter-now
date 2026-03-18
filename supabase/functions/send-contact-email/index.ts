@@ -24,7 +24,6 @@ Deno.serve(async (req) => {
   try {
     const body: ContactForm = await req.json();
 
-    // Validate required fields
     if (!body.name || !body.email || !body.message) {
       return new Response(
         JSON.stringify({ error: "Name, email, and message are required" }),
@@ -32,7 +31,6 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(body.email)) {
       return new Response(
@@ -41,12 +39,12 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Store in database
     const supabaseAdmin = createClient(
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
+    // Store in database
     const { error: dbError } = await supabaseAdmin
       .from("contact_inquiries")
       .insert({
@@ -67,43 +65,53 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Send email notification using Supabase's built-in email
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    
-    if (RESEND_API_KEY) {
-      const emailHtml = `
-        <h2>New Contact Inquiry from Kodai Website</h2>
-        <table style="border-collapse:collapse;width:100%;max-width:600px;">
-          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Name</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.name}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Email</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.email}</td></tr>
-          ${body.phone ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Phone</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.phone}</td></tr>` : ""}
-          ${body.projectType ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Project Type</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.projectType}</td></tr>` : ""}
-          ${body.budgetRange ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Budget Range</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.budgetRange}</td></tr>` : ""}
-          ${body.timeline ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Timeline</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.timeline}</td></tr>` : ""}
-          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Message</td><td style="padding:8px;border-bottom:1px solid #eee;">${body.message}</td></tr>
-        </table>
-      `;
+    // Build notification email HTML
+    const emailHtml = `
+<!DOCTYPE html>
+<html><body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f4f4f5;">
+<div style="max-width:600px;margin:0 auto;padding:32px 16px;">
+  <div style="background:#0a1628;padding:24px 32px;border-radius:8px 8px 0 0;">
+    <h1 style="margin:0;color:#c9a96e;font-size:20px;font-weight:700;">New Contact Inquiry</h1>
+    <p style="margin:4px 0 0;color:#ffffff99;font-size:13px;">Kodai Construction Website</p>
+  </div>
+  <div style="background:#ffffff;padding:24px 32px;border-radius:0 0 8px 8px;">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td style="padding:10px 0;font-weight:600;color:#333;border-bottom:1px solid #eee;width:140px;">Name</td><td style="padding:10px 0;color:#555;border-bottom:1px solid #eee;">${body.name}</td></tr>
+      <tr><td style="padding:10px 0;font-weight:600;color:#333;border-bottom:1px solid #eee;">Email</td><td style="padding:10px 0;color:#555;border-bottom:1px solid #eee;"><a href="mailto:${body.email}" style="color:#0a1628;">${body.email}</a></td></tr>
+      ${body.phone ? `<tr><td style="padding:10px 0;font-weight:600;color:#333;border-bottom:1px solid #eee;">Phone</td><td style="padding:10px 0;color:#555;border-bottom:1px solid #eee;">${body.phone}</td></tr>` : ""}
+      ${body.projectType ? `<tr><td style="padding:10px 0;font-weight:600;color:#333;border-bottom:1px solid #eee;">Project Type</td><td style="padding:10px 0;color:#555;border-bottom:1px solid #eee;">${body.projectType}</td></tr>` : ""}
+      ${body.budgetRange ? `<tr><td style="padding:10px 0;font-weight:600;color:#333;border-bottom:1px solid #eee;">Budget Range</td><td style="padding:10px 0;color:#555;border-bottom:1px solid #eee;">${body.budgetRange}</td></tr>` : ""}
+      ${body.timeline ? `<tr><td style="padding:10px 0;font-weight:600;color:#333;border-bottom:1px solid #eee;">Timeline</td><td style="padding:10px 0;color:#555;border-bottom:1px solid #eee;">${body.timeline}</td></tr>` : ""}
+      <tr><td style="padding:10px 0;font-weight:600;color:#333;vertical-align:top;">Message</td><td style="padding:10px 0;color:#555;white-space:pre-wrap;">${body.message}</td></tr>
+    </table>
+  </div>
+</div>
+</body></html>`;
 
-      const emailRes = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${RESEND_API_KEY}`,
-        },
-        body: JSON.stringify({
-          from: "Kodai Website <noreply@kodaiconstruction.com>",
-          to: ["info@kodaiconstruction.com"],
-          subject: `New Inquiry from ${body.name}`,
-          html: emailHtml,
-        }),
-      });
+    // Enqueue notification email via the email queue
+    const messageId = `contact-inquiry-${crypto.randomUUID()}`;
 
-      if (!emailRes.ok) {
-        console.error("Email send failed:", await emailRes.text());
-      }
-    } else {
-      console.log("RESEND_API_KEY not set — inquiry saved to database only");
-    }
+    // Log as pending
+    await supabaseAdmin.from("email_send_log").insert({
+      message_id: messageId,
+      template_name: "contact-inquiry-notification",
+      recipient_email: "info@kodaiconstruction.com",
+      status: "pending",
+      metadata: { name: body.name, email: body.email },
+    });
+
+    // Enqueue to transactional queue
+    await supabaseAdmin.rpc("enqueue_email", {
+      queue_name: "transactional_emails",
+      payload: {
+        message_id: messageId,
+        to: "info@kodaiconstruction.com",
+        from: "Kodai Website <noreply@notify.kodaiconstruction.com>",
+        subject: `New Inquiry from ${body.name}`,
+        html: emailHtml,
+        reply_to: body.email,
+      },
+    });
 
     return new Response(
       JSON.stringify({ success: true }),
