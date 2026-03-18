@@ -110,6 +110,10 @@ Deno.serve(async (req) => {
         subject: `New Inquiry from ${body.name}`,
         html: emailHtml,
         reply_to: body.email,
+        purpose: "transactional",
+        label: "contact-inquiry-notification",
+        sender_domain: "notify.kodaiconstruction.com",
+        queued_at: new Date().toISOString(),
       },
     });
 
