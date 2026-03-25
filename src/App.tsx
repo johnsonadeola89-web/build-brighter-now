@@ -72,11 +72,9 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <SplashScreen isVisible={showSplash} />
-          <Navbar />
           <main>
             <AnimatedRoutes />
           </main>
-          <Footer />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
