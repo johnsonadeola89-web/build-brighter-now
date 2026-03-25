@@ -39,35 +39,31 @@ const AdminDashboard = () => {
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
-    checkAuth();
-    fetchInquiries();
-  }, []);
-
-  const checkAuth = async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      navigate("/admin");
-      return;
-    }
-    const { data: isAdmin } = await supabase.rpc("has_role", {
-      _user_id: session.user.id,
-      _role: "admin",
-    });
-    if (!isAdmin) {
-      await supabase.auth.signOut();
-      navigate("/admin");
-    }
-  };
-
-  const fetchInquiries = async () => {
-    const { data, error } = await supabase
-      .from("contact_inquiries")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (!error && data) setInquiries(data);
-    setLoading(false);
-  };
+    const init = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        navigate("/admin");
+        return;
+      }
+      const { data: isAdmin } = await supabase.rpc("has_role", {
+        _user_id: session.user.id,
+        _role: "admin",
+      });
+      if (!isAdmin) {
+        await supabase.auth.signOut();
+        navigate("/admin");
+        return;
+      }
+      // Fetch inquiries after auth is confirmed
+      const { data, error } = await supabase
+        .from("contact_inquiries")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (!error && data) setInquiries(data);
+      setLoading(false);
+    };
+    init();
+  }, [navigate]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
