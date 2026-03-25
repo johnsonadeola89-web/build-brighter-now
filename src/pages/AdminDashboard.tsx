@@ -64,7 +64,6 @@ const AdminDashboard = () => {
     };
     init();
   }, [navigate]);
-  };
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
