@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Leaf, Award, Users, Target, Eye, X } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
@@ -61,7 +62,69 @@ const About = () => {
 
   return (
     <div className="overflow-hidden">
-      {/* Hero */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://kodaiconstruction.com/#mehrez-boutros",
+                "name": "Mehrez Boutros",
+                "jobTitle": "Founder and CEO",
+                "description": "Founder and CEO of Kodai Construction, setting the standards of modern architecture and structural innovation in Nigeria.",
+                "alumniOf": {
+                  "@type": "CollegeOrUniversity",
+                  "name": "Notre Dame University, Beirut, Lebanon"
+                },
+                "memberOf": {
+                  "@type": "Organization",
+                  "name": "American Society of Civil Engineers (ASCE)"
+                },
+                "worksFor": { "@id": "https://kodaiconstruction.com/#organization" }
+              },
+              {
+                "@type": "Person",
+                "name": "Elie Akiki",
+                "jobTitle": "General Manager",
+                "worksFor": { "@id": "https://kodaiconstruction.com/#organization" }
+              },
+              {
+                "@type": "Person",
+                "name": "Geoffrey Harumi",
+                "jobTitle": "Head of Human Resources",
+                "worksFor": { "@id": "https://kodaiconstruction.com/#organization" }
+              },
+              {
+                "@type": "Person",
+                "name": "Meshack Oberhiri",
+                "jobTitle": "Head of Account & Finance",
+                "worksFor": { "@id": "https://kodaiconstruction.com/#organization" }
+              },
+              {
+                "@type": "Person",
+                "name": "Tunji Oyeshiku",
+                "jobTitle": "Head of Architecture",
+                "worksFor": { "@id": "https://kodaiconstruction.com/#organization" }
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://kodaiconstruction.com/#organization",
+                "name": "Kodai Construction",
+                "url": "https://kodaiconstruction.com",
+                "founder": { "@id": "https://kodaiconstruction.com/#mehrez-boutros" },
+                "employee": [
+                  { "@type": "Person", "name": "Mehrez Boutros", "jobTitle": "Founder and CEO" },
+                  { "@type": "Person", "name": "Elie Akiki", "jobTitle": "General Manager" },
+                  { "@type": "Person", "name": "Geoffrey Harumi", "jobTitle": "Head of Human Resources" },
+                  { "@type": "Person", "name": "Meshack Oberhiri", "jobTitle": "Head of Account & Finance" },
+                  { "@type": "Person", "name": "Tunji Oyeshiku", "jobTitle": "Head of Architecture" }
+                ]
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       <section className="relative py-32 md:py-44">
         <div
           className="absolute inset-0 bg-cover bg-center"
