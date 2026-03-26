@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shield, Leaf, Award, Users, Target, Eye, X } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
